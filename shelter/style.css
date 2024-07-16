@@ -24,11 +24,10 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0px;
     padding: 0px;
-    display: flex;
-    width: 1280px;
-    justify-content: flex-start;
+    min-width: 1280px;
 }
 
 p {
@@ -132,7 +131,7 @@ h5 {
     justify-content: space-between;
     margin: 0px;
     padding: 0px;
-    min-height: 908px;
+    height: 908px;
 }
 
 .start-screen-content {
@@ -171,10 +170,9 @@ h5 {
 
 .start-screen-button {
     height: 52px;
-    padding: 15px 45px 15px 45px; 
-    gap: 10px; 
+    padding: 15px 45px 15px 45px;
     border-radius: 100px; 
-    opacity: 0px;
+    border: none;
     background-color: #F1CDB3;
     font-family: Georgia;
     font-size: 17px;
@@ -182,6 +180,10 @@ h5 {
     letter-spacing: 0.06em; 
     text-align: left;
     color: #292929;
+}
+
+.start-screen-button:hover {
+    background: #FDDCC4;
 }
 
 .about-content {
@@ -201,7 +203,7 @@ h5 {
 .about-content-heading {
     margin: 0;
     padding: 0;
-    max-width: 370px;
+    width: 370px;
     color: #545454;
 }
 
@@ -211,13 +213,16 @@ h5 {
 
 .pets {
     background-color: #F6F6F6;
-    background-size: cover;
+    background-size: 10000px;
+    background-clip: border-box;
 }
 
 .pets-content {
     display: flex;
     flex-direction: column;
-    margin: 80px 40px 0px 40px;
+    justify-content: space-between;
+    margin: 80px 40px 80px 40px;
+    height: 697px;
 }
 
 .pets-heading {
@@ -230,4 +235,67 @@ h5 {
 .slider {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.slider a {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9px 9px 0px 0px;
+}
+
+.slider a:hover{
+    .animalcard-button{
+        background-color: #FDDCC4;
+    }
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.button-arrow {
+    text-align: center;
+    align-self: center;
+    font-weight: bolder;
+    width: 50px;
+    height: 50px;
+    color: #292929;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+    transition-duration: 0.4s;
+}
+
+.button-arrow:hover {
+    background: #FDDCC4;
+}
+
+.animalcard {
+    padding: 0px 0px 30px 0px;
+    border-radius: 9px;
+}
+
+.animalcard-text {
+    text-align: center;
+    color: #545454;
+}
+
+.animalcard-button {
+    padding: 15px 45px 15px 45px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+    transition-duration: 0.4s;
+}
+
+.animalcard-button:hover {
+    background-color: #FDDCC4;
+}
+
+.button-primary {
+    padding: 15px 45px 15px 45px;
+    border-radius: 100px;
+    align-self: center;
+    background: #F1CDB3;
+    border: none;
+}
+
+.button-primary:hover {
+    background: #FDDCC4;
 }
