@@ -8,23 +8,72 @@ header {
 }
 
 html {
-    font-family: "Arial";
-    font-weight: 400;
-    margin: 0 auto;
-    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto; 
     scroll-behavior: smooth;
+    background-image: url(./assets/img/start-screen-gradient-background.jpg),
+    linear-gradient(0deg, #211F20, #211F20), 
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+    url(./assets/img/start-screen-background.jpg);
+    background-size: 100% 908px;
+    background-repeat: repeat-x;
 }   
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0px;
     padding: 0px;
     display: flex;
+    width: 1280px;
     justify-content: flex-start;
 }
 
 p {
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
     margin: 0;
     padding: 0;
+}
+
+h2 {
+    font-family: Georgia;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 57.2px;
+    text-align: left;
+}
+
+h3 {
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+h4 {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+h5 {
+    font-family: Georgia;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
 }
 
 .conteiner-logo {
@@ -43,13 +92,15 @@ p {
     line-height: 35.2px;
     color: #F1CDB3;
     letter-spacing: 0.06em;
+    text-align: left;
 }
 
 .logo-subtitle {
     font-size: 13px;
     color: #FFFFFF;
-    line-height: 15px;
+    line-height: 14.95px;
     letter-spacing: 0.1em;
+    margin-left: 4px;
 }
 
 .nav-list {
@@ -81,11 +132,7 @@ p {
     justify-content: space-between;
     margin: 0px;
     padding: 0px;
-    width: 1280px;
-    height: 908px;
-    background-repeat: no-repeat;
-    background-image: url(./assets/img/start-screen-background.jpg);
-    background-size: contain;
+    min-height: 908px;
 }
 
 .start-screen-content {
@@ -93,10 +140,11 @@ p {
     flex-direction: row;
     text-align: left;
     margin-inline: 40px;
-    align-self: flex-end;
+    justify-content: space-between  
 }
 
 .start-screen-content-conteiner {
+    width: 460px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -122,7 +170,7 @@ p {
 }
 
 .start-screen-button {
-    max-height: 52px;
+    height: 52px;
     padding: 15px 45px 15px 45px; 
     gap: 10px; 
     border-radius: 100px; 
@@ -134,4 +182,52 @@ p {
     letter-spacing: 0.06em; 
     text-align: left;
     color: #292929;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 80px 40px 80px 40px;
+}
+
+.about-content-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 430px;
+}
+
+.about-content-heading {
+    margin: 0;
+    padding: 0;
+    max-width: 370px;
+    color: #545454;
+}
+
+.about-content-subheading {
+    color: #4C4C4C;  
+}
+
+.pets {
+    background-color: #F6F6F6;
+    background-size: cover;
+}
+
+.pets-content {
+    display: flex;
+    flex-direction: column;
+    margin: 80px 40px 0px 40px;
+}
+
+.pets-heading {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #545454;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
 }
