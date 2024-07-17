@@ -356,10 +356,6 @@ h5 {
     margin: 80px 183px 80px 183px;
 }
 
-.donation-content > img {
-    size: 100%;
-}
-
 .donation-content-items {
     width: 380px;
     height: 282px;
@@ -392,16 +388,57 @@ h5 {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding-inline: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 15px 10px 15px;
     border-radius: 9px; 
-}
-
-.credit-card > img {
-    size: 100%;
 }
 
 .credit-card > h4 {
     color: #545454;
+}
+
+footer {
+    height: 350px;
+    background-image: url(./assets/img/footer-background.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 40px 0px 40px; 
+}
+
+.footer-content > img {
+    height: fit-content;
+    width: fit-content;
+}
+
+.footer-content-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer-content-block > h3 {
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer-info > h4 {
+    color: #F1CDB3;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-info > img {
+    padding-right: 20px;
 }
