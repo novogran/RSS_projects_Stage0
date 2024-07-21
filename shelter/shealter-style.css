@@ -70,6 +70,10 @@ h5 {
     justify-content: space-between;
 }
 
+.conteiner-logo a {
+    text-decoration: none;
+}
+
 .logo-title {
     font-family: Georgia;
     font-size: 32px;
@@ -116,6 +120,7 @@ h5 {
 
 .nav-item a:hover {
     text-decoration: 3px underline #F1CDB3;
+    cursor: grab;
 }
 
 .start-screen {
@@ -132,7 +137,7 @@ h5 {
     background-repeat: repeat-x;
 }
 
-.start-screen-content {
+.not-only {
     max-width: 1280px;
     display: flex;
     flex-direction: row;
@@ -181,6 +186,7 @@ h5 {
 
 .start-screen-button:hover {
     background: #FDDCC4;
+    cursor: grab;
 }
 
 .about-block {
@@ -218,7 +224,7 @@ h5 {
     color: #4C4C4C;  
 }
 
-.pets {
+.our-friends {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,14 +258,16 @@ h5 {
 .slider form {
     text-align: center;
     text-decoration: none;
-    border-radius: 9px 9px 0px 0px;
+    border-radius: 9px;
 }
 
 .slider form:hover{
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: grab;
     .animalcard-button{
         background-color: #FDDCC4;
+        cursor: grab;
     }
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .button-arrow {
@@ -270,14 +278,16 @@ h5 {
     height: 52px;
     color: #292929;
     border-radius: 100px;
-    border: 2px solid #F1CDB3;
+    border: 2px solid #FDDCC4;
     transition-duration: 0.4s;
     margin: 0px;
     padding: 0px;
+    background-color: #F6F6F6;
 }
 
 .button-arrow:hover {
     background: #FDDCC4;
+    cursor: grab;
 }
 
 .animalcard {
@@ -300,7 +310,8 @@ h5 {
     padding: 15px 45px 15px 45px;
     margin-bottom: 30px;
     border-radius: 100px;
-    border:2px solid #F1CDB3;
+    border:2px solid #FDDCC4;
+    background-color: #FAFAFA;
     transition-duration: 0.4s;
     font-family: Georgia;
     font-size: 17px;
@@ -310,15 +321,14 @@ h5 {
     color: #292929;
 }
 
-.animalcard-button:hover {
-    background-color: #FDDCC4;
+.pets-content > form {
+    align-self: center;
 }
 
 .button-primary {
     padding: 15px 45px 15px 45px;
     border-radius: 100px;
-    align-self: center;
-    background: #F1CDB3;
+    background-color: #F1CDB3;
     border: none;
     font-family: Georgia;
     font-size: 17px;
@@ -329,14 +339,16 @@ h5 {
     color: #292929;
 }
 
-.button-primary:hover {
-    background: #FDDCC4;
+.button-primary:hover{
+    background-color: #FDDCC4;
+    cursor: grab;
 }
 
 .help-block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FFFFFF;
 }
 
 .help-block-content {
@@ -365,11 +377,25 @@ h5 {
     justify-content: space-between;
 }
 
+.help-item-cards-top a:hover {
+    background-color: #f1f1f1;
+    border-radius: 9px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: grab;
+}
+
 .help-item-cards-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 55px 84px 0px 84px;
+}
+
+.help-item-cards-bottom a:hover {
+    background-color: #f1f1f1;
+    border-radius: 9px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: grab;
 }
 
 .help-item {
@@ -379,13 +405,14 @@ h5 {
     text-decoration: none;
 }
 
+
 .help-item > h4 {
     margin: 0px;
     padding-top: 30px;
     color: #545454;
 }
 
-.donation-block {
+.in-addition-block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -435,6 +462,10 @@ h5 {
     padding-top: 20px;
 }
 
+.donation-content-items a {
+    text-decoration: none;
+}
+
 .credit-card {
     background-color: #F1CDB3;
     display: flex;
@@ -466,6 +497,7 @@ footer {
     width: 1280px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 40px 40px 0px 40px; 
 }
 
@@ -478,7 +510,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 159.8px 60px 0px;
+    padding: 16px 160px 60px 0px;
     margin: 0;
 }
 
@@ -486,12 +518,17 @@ footer {
     color: #FFFFFF;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.0594em;
 }
 
 .footer-info {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.footer-content-block a{
+    text-decoration: none;
 }
 
 .footer-info > h4 {
@@ -502,8 +539,4 @@ footer {
 
 .footer-info > img {
     margin-right: 20px;
-}
-
-.footer-info-text{
-    width: 260px;
 }
