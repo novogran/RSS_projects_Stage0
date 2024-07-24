@@ -388,7 +388,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 160px 60px 0px;
+    padding: 16px 158px 60px 0px;
     margin: 0;
 }
 
@@ -412,6 +412,7 @@ footer {
     color: #F1CDB3;
     margin: 0;
     padding: 0;
+    text-wrap: nowrap;
 }
 
 .footer-info > img {

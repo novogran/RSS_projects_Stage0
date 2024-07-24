@@ -502,8 +502,9 @@ footer {
 }
 
 .footer-content > img {
-    height: fit-content;
-    width: fit-content;
+    height: 310px;
+    width: 300px;
+    align-self: auto;
 }
 
 .footer-content-block {
@@ -518,7 +519,6 @@ footer {
     color: #FFFFFF;
     margin: 0;
     padding: 0;
-    letter-spacing: 0.0594em;
 }
 
 .footer-info {
@@ -535,6 +535,7 @@ footer {
     color: #F1CDB3;
     margin: 0;
     padding: 0;
+    text-wrap: nowrap;
 }
 
 .footer-info > img {
