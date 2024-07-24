@@ -129,10 +129,10 @@ h5 {
     align-items: center;
     margin: 0px;
     padding: 0px;
-    background-image: url(./assets/img/start-screen-gradient-background.jpg),
+    background-image: url(./shelter/assets/img/start-screen-gradient-background.jpg),
     linear-gradient(0deg, #211F20, #211F20), 
     radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-    url(./assets/img/start-screen-background.jpg);
+    url(./shelter/assets/img/start-screen-background.jpg);
     background-size: cover;
     background-repeat: repeat-x;
 }
@@ -485,10 +485,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./assets/img/footer-gradient-background.png),
+    background-image: url(./shelter/assets/img/footer-gradient-background.png),
     linear-gradient(0deg, #211F20, #211F20),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
-    url(./assets/img/footer-background.png);
+    url(./shelter/assets/img/footer-background.png);
     background-size: cover;
     background-repeat: repeat-x;
 }
