@@ -121,6 +121,7 @@ h5 {
 .nav-item a:hover {
     text-decoration: 3px underline #F1CDB3;
     cursor: grab;
+    transition-duration: 0.4s;
 }
 
 .start-screen {
@@ -129,10 +130,10 @@ h5 {
     align-items: center;
     margin: 0px;
     padding: 0px;
-    background-image: url(./shelter/assets/img/start-screen-gradient-background.jpg),
+    background-image: url(./assets/img/start-screen-gradient-background.jpg),
     linear-gradient(0deg, #211F20, #211F20), 
     radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-    url(./shelter/assets/img/start-screen-background.jpg);
+    url(./assets/img/start-screen-background.jpg);
     background-size: cover;
     background-repeat: repeat-x;
 }
@@ -210,7 +211,7 @@ h5 {
 .about-content-conteiner {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 14px 175px 14px 120px;
 }
 
@@ -256,6 +257,10 @@ h5 {
 }
 
 .slider form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
     text-align: center;
     text-decoration: none;
     border-radius: 9px;
@@ -290,12 +295,16 @@ h5 {
     cursor: grab;
 }
 
-.animalcard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FAFAFA;
-    border-radius: 9px;
+.animalcard-katrine {
+    margin-left: 53px;
+}
+
+.animalcard-jennifer {
+    margin-inline: 90px;
+}
+
+.animalcard-woody {
+    margin-right: 53px;
 }
 
 .animalcard-text {
@@ -485,10 +494,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./shelter/assets/img/footer-gradient-background.png),
+    background-image: url(./assets/img/footer-gradient-background.png),
     linear-gradient(0deg, #211F20, #211F20),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
-    url(./shelter/assets/img/footer-background.png);
+    url(./assets/img/footer-background.png);
     background-size: cover;
     background-repeat: repeat-x;
 }
