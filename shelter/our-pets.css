@@ -234,7 +234,7 @@ h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px 40px 80px 40px;
+    padding: 80px 40px 100px 40px;
 }
 
 .pets-heading {
