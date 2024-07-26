@@ -1,6 +1,6 @@
 header {
     width: 1280px;
-    padding: 30px 40px 0px 40px;
+    padding: 31px 40px 0px 40px;
 }
 
 * {
@@ -143,7 +143,7 @@ h5 {
     display: flex;
     flex-direction: row;
     text-align: left;
-    padding: 90px 40px 0px 40px;
+    padding: 89px 40px 0px 40px;
     justify-content: space-between  
 }
 
@@ -364,7 +364,7 @@ h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px 40px 100px 40px;
+    padding: 82px 40px 100px 40px;
 }
 
 .help-block-content > h3 {
@@ -372,7 +372,7 @@ h5 {
     color: #545454;
     text-align: center;
     margin: 0px;
-    padding-bottom: 60px;
+    padding-bottom: 58pxpx;
 }
 
 .help-item-cards {
@@ -421,7 +421,7 @@ h5 {
 
 .help-item > h4 {
     margin: 0px;
-    padding-top: 30px;
+    padding-top: 31px;
     color: #545454;
 }
 
@@ -438,11 +438,11 @@ h5 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 182px 100px 183px;
+    padding: 81px 182px 100px 183px;
 }
 
 .donation-content > img {
-    padding: 11px 30px 10px 0px;
+    padding: 10px 30px 10px 0px;
 }
 
 .donation-content-items {
@@ -460,7 +460,7 @@ h5 {
 
 .donation-content-items > h5 {
     color: #545454;
-    padding: 20px 0px 20px 0px;
+    padding: 19px 0px 20px 0px;
     margin: 0;
 }
 
@@ -484,7 +484,7 @@ h5 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 15px 10px 15px;
+    padding: 11px 14px 11px 14px;
     border-radius: 9px;
 }
 
@@ -510,21 +510,20 @@ footer {
     width: 1280px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 40px 40px 0px 40px; 
 }
 
 .footer-content > img {
     height: 310px;
     width: 300px;
-    align-self: auto;
+    margin-left: 7px;
 }
 
 .footer-content-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 160px 60px 0px;
+    padding: 17px 160px 60px 0px;
     margin: 0;
 }
 

@@ -68,7 +68,7 @@ h5 {
 .conteiner-logo {
     display: flex;
     justify-content: space-between;
-    padding: 30px 40px 30px 40px;
+    padding: 31px 40px 30px 40px;
 }
 
 .conteiner-logo a{
@@ -238,7 +238,7 @@ h5 {
 }
 
 .pets-heading {
-    padding: 0px 0px 45px 0px;
+    padding: 0px 0px 43px 0px;
     margin: 0;
     text-align: center;
     color: #545454;
@@ -279,7 +279,7 @@ h5 {
 }
 
 .animalcard-button {
-    padding: 15px 45px 15px 45px;
+    padding: 14px 44px 14px 44px;
     margin: 30px 0px 30px 0px;
     border-radius: 100px;
     border: 2px solid #FDDCC4;
@@ -379,16 +379,11 @@ footer {
     padding: 40px 40px 0px 40px; 
 }
 
-.footer-content > img {
-    height: fit-content;
-    width: fit-content;
-}
-
 .footer-content-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 158px 60px 0px;
+    padding: 16px 160px 60px 0px;
     margin: 0;
 }
 
@@ -396,6 +391,7 @@ footer {
     color: #FFFFFF;
     margin: 0;
     padding: 0;
+    text-wrap: nowrap;
 }
 
 .footer-info {
