@@ -106,6 +106,7 @@ h5 {
     text-align: left;
     padding: 0;
     text-underline-offset: 7px;
+    transition-duration: 0.4s;
 }
 
 .nav-item-about a{
@@ -116,6 +117,7 @@ h5 {
 .nav-item a{
     color: #CDCDCD;
     text-decoration: none;
+    transition-duration: 0.4s;
 }
 
 .nav-item a:hover {
@@ -188,6 +190,7 @@ h5 {
 .start-screen-button:hover {
     background: #FDDCC4;
     cursor: grab;
+    transition-duration: 0.4s;
 }
 
 .about-block {
@@ -268,9 +271,11 @@ h5 {
 .slider form:hover{
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     cursor: grab;
+    transition-duration: 0.4s;
     .animalcard-button{
         background-color: #FDDCC4;
         cursor: grab;
+        transition-duration: 0.4s;
     }
 }
 
@@ -292,6 +297,7 @@ h5 {
 .button-arrow:hover {
     background: #FDDCC4;
     cursor: grab;
+    transition-duration: 0.4s;
 }
 
 .animalcard-katrine {
@@ -343,6 +349,7 @@ h5 {
     font-weight: 400;
     line-height: 22.1px;
     letter-spacing: 0.06em;
+    transition-duration: 0.4s;
     text-align: center;
     color: #292929;
 }
@@ -411,6 +418,7 @@ h5 {
     align-items: center;
     align-self: center;
     text-decoration: none;
+    transition-duration: 0.4s;
 }
 
 .help-item > img {
@@ -484,7 +492,7 @@ h5 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 11px 14px 11px 14px;
+    padding: 10px 15px 10px 15px;
     border-radius: 9px;
 }
 

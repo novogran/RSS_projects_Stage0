@@ -256,11 +256,18 @@ h5 {
     text-decoration: none;
     border-radius: 9px;
     margin: 15px 0px 15px 0px;
+    transition-duration: 0.4s;
 }
 
 .slider form:hover{
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     cursor: grab;
+    transition-duration: 0.4s;
+    .animalcard-button{
+        background-color: #FDDCC4;
+        cursor: grab;
+        transition-duration: 0.4s;
+    }
 }
 
 .animalcard {
@@ -375,7 +382,6 @@ footer {
     width: 1280px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 40px 40px 0px 40px; 
 }
 
@@ -392,6 +398,12 @@ footer {
     margin: 0;
     padding: 0;
     text-wrap: nowrap;
+}
+
+.footer-content > img {
+    height: 310px;
+    width: 300px;
+    margin-left: 8px;
 }
 
 .footer-info {
