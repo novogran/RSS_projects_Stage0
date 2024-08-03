@@ -1,6 +1,7 @@
 header {
-    width: 1280px;
-    padding: 31px 40px 0px 40px;
+    max-width: 1280px;
+    width: 100%;
+    padding: 3.48vh 3.125vw 0px 3.125vw;
 }
 
 * {
@@ -8,7 +9,9 @@ header {
 }
 
 html {
-    display: inline;
+    display: contents;
+    width: auto;
+    margin: 0 auto;
     scroll-behavior: smooth;
 }   
 
@@ -127,34 +130,40 @@ h5 {
 }
 
 .start-screen {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0px;
     padding: 0px;
-    background-image: url(./assets/img/start-screen-gradient-background.jpg),
-    linear-gradient(0deg, #211F20, #211F20), 
-    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-    url(./assets/img/start-screen-background.jpg);
-    background-size: cover;
-    background-repeat: repeat-x;
+    background-image: url("./assets/img/noise_transparent.png"),
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
 .not-only {
     max-width: 1280px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     text-align: left;
-    padding: 89px 40px 0px 40px;
+    flex-wrap: wrap;
+    padding: 10.429vh 3.125vw 0px 3.125vw;
     justify-content: space-between  
+}
+
+.not-only > img {
+    width: 52.3vw;
+    height: 84.36vh;
 }
 
 .start-screen-content-conteiner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    max-width: 460px;
     align-content: space-between;
-    padding: 163px 42px 243px 0px;
+    justify-content: center;
+    /* padding: 163px 42px 243px 0px; */
 }
 
 .start-screen-heading {
@@ -169,6 +178,7 @@ h5 {
 }
 
 .start-screen-subheading {
+    padding: 4.98vh 0px 4.98vh 0px;
     line-height: 24px;
     color: #CDCDCD;
 }
@@ -200,9 +210,11 @@ h5 {
 }
 
 .about-content {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 80px 40px 100px 40px; 
 }
 
@@ -214,7 +226,8 @@ h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 14px 175px 14px 120px;
+    max-width: 430px;
+    margin: 14px 175px 14px 120px;
 }
 
 .about-content-heading {
@@ -235,10 +248,12 @@ h5 {
 }
 
 .pets-content {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 80px 40px 100px 40px;
 }
 
@@ -254,6 +269,7 @@ h5 {
 .slider {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 60px 0px 60px 0px;
 }
@@ -305,11 +321,11 @@ h5 {
 }
 
 .animalcard-jennifer {
-    margin-inline: 90px;
+    /* margin-inline: 6.8vw; */
 }
 
 .animalcard-woody {
-    margin-right: 53px;
+    /* margin-right: 53px; */
 }
 
 .animalcard-text {
@@ -367,7 +383,8 @@ h5 {
 }
 
 .help-block-content {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -441,8 +458,10 @@ h5 {
 }
 
 .donation-content {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -506,17 +525,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./assets/img/footer-gradient-background.png),
-    linear-gradient(0deg, #211F20, #211F20),
-    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
-    url(./assets/img/footer-background.png);
-    background-size: cover;
-    background-repeat: repeat-x;
+    background-image: url("./assets/img/noise_transparent.png"),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
 .footer-content {
-    width: 1280px;
+    max-width: 100%;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     padding: 40px 40px 0px 40px; 
 }
