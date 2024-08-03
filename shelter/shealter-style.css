@@ -148,12 +148,12 @@ h5 {
     text-align: left;
     flex-wrap: wrap;
     padding: 10.429vh 3.125vw 0px 3.125vw;
-    justify-content: space-between  
+    justify-content: center;
 }
 
 .not-only > img {
-    width: 52.3vw;
-    height: 84.36vh;
+    width: 54.532vw;
+    /* height: 84.358vh; */
 }
 
 .start-screen-content-conteiner {
