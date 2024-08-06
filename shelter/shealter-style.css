@@ -77,6 +77,18 @@ h5 {
     text-decoration: none;
 }
 
+@media (max-width:1104px) {
+    .conteiner-logo {
+        padding: 30px 30px 0px 30px;
+    }
+}
+
+@media (max-width:667px) {
+    .conteiner-logo {
+        padding: 30px 20px 0px 20px;
+    }
+}
+
 .logo-title {
     font-family: Georgia;
     font-size: 32px;
@@ -113,7 +125,7 @@ h5 {
     .nav > a {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 }
 
@@ -186,14 +198,12 @@ h5 {
 @media (max-width:1235px) {
     .not-only {
         flex-wrap: wrap;
+        justify-content: flex-start;
         padding: 60px 100px 0px 99px;
     }
 
     .not-only > img {
-        width: 74.09vw;
-        max-width: fit-content;
-        margin-left: auto;
-        padding: 0 0px 0 70px;
+        margin-left: 70px;
     }
 
     .start-screen-content-conteiner {
@@ -221,7 +231,7 @@ h5 {
 @media (max-width:667px) {
     .start-screen-heading {
     font-size: 25px;
-    line-height: 32.5px;
+    line-height: 32px;
     letter-spacing: 0.06em;
     text-align: center;
     }
@@ -229,10 +239,12 @@ h5 {
         padding: 60px 10px 0px 10px;
     }
     .not-only > img {
+        margin-left: 40px;
+        width: 260px;
         padding: 0;
     }
     .start-screen-content-conteiner {
-        padding: 0 0 105px 0;
+        padding: 0 0 105.5px 0;
         align-items: center
     }
     .start-screen-subheading {
@@ -241,7 +253,7 @@ h5 {
 }
 
 .start-screen-subheading {
-    padding: 42px 0px 42px 0px;
+    padding: 41px 0px 42px 0px;
     color: #CDCDCD;
 }
 
@@ -276,7 +288,7 @@ h5 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap-reverse;
     padding: 80px 40px 100px 40px; 
 }
@@ -295,7 +307,8 @@ h5 {
         max-width: fit-content;
     }
     .about-content {
-        padding: 80px 166px 100px 165px; 
+        justify-content: center;
+        padding: 80px 169px 100px 169px; 
     }
 }
 
@@ -362,8 +375,14 @@ h5 {
 }
 
 @media (max-width:667px) {
+    .about-content-subheading-first {
+        padding-bottom: 22px;
+    }
     .pets-content {
         padding: 42px 10px 42px 10px;
+    }
+    .pets-content > img {
+        width: 260px;
     }
     .pets-heading{
         font-size: 25px;
@@ -382,8 +401,6 @@ h5 {
 }
 
 .slider form {
-    flex-direction: column;
-    align-items: center;
     background-color: #FAFAFA;
     text-align: center;
     text-decoration: none;
@@ -422,6 +439,10 @@ h5 {
     }
 }
 
+.animalcard-jennifer {
+    margin-inline: 90px;
+}
+
 @media (max-width:1000px) {
 
     .animalcard_woody {
@@ -435,6 +456,7 @@ h5 {
     }
     .animalcard-jennifer {
         display:none;
+        margin-inline: 90px;
     }
 }
 
@@ -449,7 +471,6 @@ h5 {
     border-radius: 100px;
     border: 2px solid #FDDCC4;
     transition-duration: 0.4s;
-    margin: 0px;
     padding: 0px;
     background-color: #F6F6F6;
 }
@@ -461,15 +482,15 @@ h5 {
 }
 
 .button-arrow-previous {
-    margin-left: 40px;
+    margin: 3px 51px 0px 40px;
 }
 
 .button-arrow-next {
-    margin-right: 40px;
+    margin: 3px 40px 0px 51px;
 }
 
 @media (max-width:667px) {
-    .button-arrow {
+    .slider > button {
         order: 1;
     }
 }
@@ -618,6 +639,7 @@ h5 {
     }
     .help-item-cards {
         column-gap: 60px;
+        row-gap: 55px;
     }
 }
 
@@ -654,7 +676,7 @@ h5 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 81px 182px 100px 183px;
+    padding: 81px 182px 101px 183px;
 }
 
 .donation-content > img {
@@ -702,6 +724,7 @@ h5 {
         padding: 80px 19px 100px 20px;
     }
     .donation-content-items {
+        padding-top: 21px;
         margin-bottom: 60px;
     }
     .donation-content > img {
@@ -788,6 +811,8 @@ footer {
 
 @media (max-width:1000px) {
     .footer-content {
+        justify-content: normal;
+        column-gap: 60px;
         padding: 30px 30px 0px 30px; 
     }
     .footer-content-block {
@@ -795,6 +820,7 @@ footer {
         padding: 0px;
     }
     .footer-content > img {
+        margin-left: 170px;
         margin-top: 65px;
     }
 }
