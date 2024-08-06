@@ -1,5 +1,7 @@
 header {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
+    /* padding: 3.48vh 3.125vw 0px 3.125vw; */
 }
 
 * {
@@ -7,7 +9,9 @@ header {
 }
 
 html {
-    display: inline;
+    display: contents;
+    width: auto;
+    margin: 0 auto;
     scroll-behavior: smooth;
 }   
 
@@ -92,6 +96,18 @@ h5 {
     padding: 10px 0px 0px 4px;
 }
 
+@media (max-width:1000px) {
+    .conteiner-logo {
+        padding: 30px;
+    }
+}
+
+@media (max-width:479px) {
+    .conteiner-logo {
+        padding: 30px 20px 30px 20px;
+    }
+}
+
 .nav {
     display: flex;
     flex-direction: column;
@@ -107,6 +123,7 @@ h5 {
     text-align: left;
     padding: 0;
     text-underline-offset: 7px;
+    transition-duration: 0.4s;
 }
 
 .nav-item-about a{
@@ -117,11 +134,31 @@ h5 {
 .nav-item a{
     color: #545454;
     text-decoration: none;
+    transition-duration: 0.4s;
 }
 
 .nav-item a:hover {
     text-decoration: 3px underline #F1CDB3;
     cursor: grab;
+    transition-duration: 0.4s;
+}
+
+.nav > a {
+    display: none;
+}
+
+@media (max-width:667px) {
+    .nav {
+        justify-content: center;
+    }
+    .nav > ul {
+        display: none;
+    }
+    .nav > a {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .start-screen {
@@ -230,7 +267,7 @@ h5 {
 }
 
 .pets-content {
-    width: 1280px;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -270,10 +307,10 @@ h5 {
     }
 }
 
-.animalcard {
-    display: flex;
+.slider > form {
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     border-radius: 9px;
     background-color: #FAFAFA;
 }
@@ -308,8 +345,8 @@ h5 {
 .navigation {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 45px 430px 0px 430px;
+    justify-content: center;
+    padding: 45px 0px 0px 0px;
 }
 
 .navigation > form > button {
@@ -366,30 +403,81 @@ h5 {
     cursor: grab;
 }
 
+@media (max-width:1000px) {
+    .pets-content {
+        padding: 60px 0px 70px 0px;
+    }
+    .pets-heading {
+        padding: 20px 0px 30px 0px;
+    }
+    .slider {
+        justify-content: space-around;
+    }
+    .animalcard-scarlett {
+        display: none;
+    }
+    .animalcard-freddie {
+        display: none;
+    }
+    .navigation {
+        padding: 40px 0px 0px 0px;
+    }
+    .navigation > form > button {
+        margin-inline: 10px;
+    }
+    
+}
+
+@media (max-width:479px) {
+    .pets-content {
+        padding: 42px 0px 42px 0px;
+    }
+    .pets-heading {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+        padding: 0px 0px 42px 0px;
+    }
+    .animalcard-sophia {
+        display: none;
+    }
+    .animalcard-timmy {
+        display: none;
+    }
+    .animalcard-charly {
+        display: none;
+    }
+    .navigation {
+        padding: 42px 0px 0px 0px;
+    }
+    .navigation > form > button {
+        margin-inline: 5px;
+    }
+}
+
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./assets/img/footer-gradient-background.png),
-    linear-gradient(0deg, #211F20, #211F20),
-    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
-    url(./assets/img/footer-background.png);
-    background-size: cover;
-    background-repeat: repeat-x;
+    background-image: url("./assets/img/noise_transparent.png"),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
 .footer-content {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-around;
     padding: 40px 40px 0px 40px; 
 }
 
 .footer-content-block {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 16px 160px 60px 0px;
+    justify-content: space-evenly;
+    padding: 17px 160px 60px 0px;
     margin: 0;
 }
 
@@ -403,7 +491,7 @@ footer {
 .footer-content > img {
     height: 310px;
     width: 300px;
-    margin-left: 8px;
+    margin-left: 7px;
 }
 
 .footer-info {
@@ -425,4 +513,38 @@ footer {
 
 .footer-info > img {
     margin-right: 20px;
+}
+
+@media (max-width:1000px) {
+    .footer-content {
+        padding: 30px 30px 0px 30px; 
+    }
+    .footer-content-block {
+        height: 234px;
+        padding: 0px;
+    }
+    .footer-content > img {
+        margin-top: 65px;
+    }
+}
+
+@media (max-width:479px) {
+    .footer-content {
+        padding: 0; 
+    }
+    .footer-content-block {
+        max-width: 278px;
+    }
+    .footer-content > img {
+        margin-top: 40px;
+    }
+    .footer-content-block > h3 {
+        font-size: 25px;
+        line-height: 32.5px;
+        text-align: center;
+        text-wrap: wrap;
+    }
+    .footer-content-block > h3 > br {
+        display: none;
+    }
 }
