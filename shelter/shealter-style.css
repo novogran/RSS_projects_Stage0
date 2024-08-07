@@ -757,7 +757,6 @@ h5 {
         padding: 82px 19px 100px 20px;
     }
     .donation-content-items {
-        /* padding-top: 21px; */
         margin-bottom: 60px;
     }
     .donation-content > img {
@@ -765,7 +764,7 @@ h5 {
     }
 }
 
-@media (max-width:479px) {
+@media (max-width:534px) {
     .donation-content {
         justify-content: center;
         padding: 42px 10px 42px 10px;
@@ -856,7 +855,7 @@ footer {
         padding: 30px 64px 0px 64px; 
     }
     .footer-content-block {
-        /* height: 234px; */
+        row-gap: 32px;
         padding: 0px;
     }
     .footer-content > img {
@@ -894,7 +893,7 @@ footer {
 }
 
 
-@media (max-width:479px) {
+@media (max-width:534px) {
     .footer-content {
         padding: 30px 10px 0 10px; 
     }
