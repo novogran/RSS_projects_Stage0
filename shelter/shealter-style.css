@@ -228,6 +228,31 @@ h5 {
     margin: 0;
 }
 
+.start-screen-subheading {
+    padding: 42px 0px 42px 0px;
+    color: #CDCDCD;
+}
+
+.start-screen-button {
+    height: 52px;
+    padding: 15px 45px 15px 45px;
+    border-radius: 100px; 
+    border: none;
+    background-color: #F1CDB3;
+    font-family: Georgia;
+    font-size: 17px;
+    line-height: 22.1px; 
+    letter-spacing: 0.06em; 
+    text-align: left;
+    color: #292929;
+}
+
+.start-screen-button:hover {
+    background: #FDDCC4;
+    cursor: grab;
+    transition-duration: 0.4s;
+}
+
 @media (max-width:667px) {
     .start-screen-heading {
     font-size: 25px;
@@ -252,31 +277,6 @@ h5 {
     }
 }
 
-.start-screen-subheading {
-    padding: 41px 0px 42px 0px;
-    color: #CDCDCD;
-}
-
-.start-screen-button {
-    height: 52px;
-    padding: 15px 45px 15px 45px;
-    border-radius: 100px; 
-    border: none;
-    background-color: #F1CDB3;
-    font-family: Georgia;
-    font-size: 17px;
-    line-height: 22.1px; 
-    letter-spacing: 0.06em; 
-    text-align: left;
-    color: #292929;
-}
-
-.start-screen-button:hover {
-    background: #FDDCC4;
-    cursor: grab;
-    transition-duration: 0.4s;
-}
-
 .about-block {
     display: flex;
     flex-direction: column;
@@ -288,7 +288,7 @@ h5 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap-reverse;
     padding: 80px 40px 100px 40px; 
 }
@@ -315,6 +315,9 @@ h5 {
 @media (max-width:667px) {
     .about-content {
         padding: 42px 10px 42px 10px; 
+    }
+    .about-content > img {
+        width: 260px;
     }
     .about-content-heading {
         font-size: 25px;
@@ -448,15 +451,21 @@ h5 {
     .animalcard_woody {
         display:none;
     }
+    .animalcard-jennifer {
+        margin-left: 40px;
+    }
 }
 
 @media (max-width:667px) {
+    .slider{
+        padding: 42px 0px 42px 0px;
+        justify-content: space-around;
+    }
     .animalcard_woody {
         display:none;
     }
     .animalcard-jennifer {
         display:none;
-        margin-inline: 90px;
     }
 }
 
@@ -489,6 +498,16 @@ h5 {
     margin: 3px 40px 0px 51px;
 }
 
+@media (max-width:1000px) {
+    .button-arrow-previous {
+        margin: 3px 12px 0px 30px;
+    }
+    
+    .button-arrow-next {
+        margin: 3px 30px 0px 10px;
+    }
+}
+
 @media (max-width:667px) {
     .slider > button {
         order: 1;
@@ -498,7 +517,7 @@ h5 {
 .animalcard-text {
     text-align: center;
     color: #545454;
-    padding: 30px 94px 30px 93px;
+    padding: 30px 0px 30px 0px;
     margin: 0px;
     line-height: 22.72px;
 }
@@ -558,12 +577,6 @@ h5 {
     padding: 80px 40px 100px 40px;
 }
 
-@media (max-width:479px) {
-    .help-block-content {
-        padding: 42px 15px 42px 15px;
-    }
-}
-
 .help-block-content > h3 {
     align-self: center;
     color: #545454;
@@ -573,11 +586,17 @@ h5 {
 }
 
 @media (max-width:479px) {
+    .help-block-content {
+        padding: 42px 15px 42px 15px;
+    }
+    .animalcard-text {
+        padding-top: 25px;
+    }
     .help-block-content > h3 {
         font-size: 25px;
         line-height: 32.5px;
         text-align: center;
-        padding-bottom: 42px;
+        padding-bottom: 40px;
     }
 }
 
@@ -657,7 +676,11 @@ h5 {
     }
     .help-item-cards {
         justify-content: flex-start;
-        column-gap: 30px;
+        gap: 30px;
+    }
+    .help-item > img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -721,10 +744,10 @@ h5 {
 @media (max-width:1279px) {
     .donation-content {
         justify-content: center;
-        padding: 80px 19px 100px 20px;
+        padding: 82px 19px 100px 20px;
     }
     .donation-content-items {
-        padding-top: 21px;
+        /* padding-top: 21px; */
         margin-bottom: 60px;
     }
     .donation-content > img {
@@ -733,7 +756,12 @@ h5 {
 }
 
 @media (max-width:479px) {
+    .donation-content {
+        justify-content: center;
+        padding: 42px 10px 42px 10px;
+    }
     .donation-content > img {
+        width: 260px;
         max-width: 100%;
         max-height: 100%;
         padding: 0px;
@@ -745,9 +773,11 @@ h5 {
     }
     .donation-content-items {
         align-items: center;
+        margin-bottom: 42px;
     }
     .donation-content-items > p {
         text-align: justify;
+        padding-inline: 10px;
     }
     .donation-content-items > h5 {
         line-height: 24px;
@@ -796,8 +826,8 @@ footer {
 }
 
 .footer-content > img {
-    height: 310px;
-    width: 300px;
+    max-height: 310px;
+    max-width: 300px;
     margin-left: 7px;
 }
 
@@ -813,10 +843,10 @@ footer {
     .footer-content {
         justify-content: normal;
         column-gap: 60px;
-        padding: 30px 30px 0px 30px; 
+        padding: 30px 64px 0px 64px; 
     }
     .footer-content-block {
-        height: 234px;
+        /* height: 234px; */
         padding: 0px;
     }
     .footer-content > img {
@@ -856,13 +886,14 @@ footer {
 
 @media (max-width:479px) {
     .footer-content {
-        padding: 0; 
+        padding: 30px 10px 0 10px; 
     }
     .footer-content-block {
-        max-width: 278px;
+        /* max-width: 278px; */
     }
     .footer-content > img {
-        margin-top: 40px;
+        width: 260px;
+        margin: auto;
     }
     .footer-content-block > h3 {
         font-size: 25px;
