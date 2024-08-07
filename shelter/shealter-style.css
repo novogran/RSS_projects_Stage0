@@ -452,7 +452,7 @@ h5 {
         display:none;
     }
     .animalcard-jennifer {
-        margin-left: 40px;
+        margin: 0px 0px 0px 40px;
     }
 }
 
@@ -504,7 +504,7 @@ h5 {
     }
     
     .button-arrow-next {
-        margin: 3px 30px 0px 10px;
+        margin: 3px 30px 0px 12px;
     }
 }
 
