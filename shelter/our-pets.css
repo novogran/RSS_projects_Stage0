@@ -156,7 +156,7 @@ h5 {
     .nav > a {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 }
 
@@ -443,6 +443,7 @@ h5 {
     .slider {
         padding-inline: 10px;
         row-gap: 29px;
+        justify-content: center;
     }
     .animalcard-sophia {
         display: none;
