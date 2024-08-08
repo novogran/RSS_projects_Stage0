@@ -430,7 +430,7 @@ h5 {
     
 }
 
-@media (max-width:479px) {
+@media (max-width:457px) {
     .pets-content {
         padding: 42px 0px 42px 0px;
     }
@@ -439,6 +439,10 @@ h5 {
         line-height: 32.5px;
         text-align: center;
         padding: 0px 0px 42px 0px;
+    }
+    .slider {
+        padding-inline: 10px;
+        row-gap: 29px;
     }
     .animalcard-sophia {
         display: none;
@@ -479,7 +483,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 160px 60px 0px;
+    padding: 17px 160px 60px 0px;
     margin: 0;
 }
 
@@ -491,8 +495,8 @@ footer {
 }
 
 .footer-content > img {
-    height: 310px;
-    width: 300px;
+    max-height: 310px;
+    max-width: 300px;
     margin-left: 7px;
 }
 
@@ -519,35 +523,47 @@ footer {
 
 @media (max-width:1000px) {
     .footer-content {
-        padding: 30px 71px 0px 64px; 
+        justify-content: normal;
+        column-gap: 60px;
+        padding: 30px 64px 0px 64px; 
     }
     .footer-content-block {
-        height: 234px;
+        row-gap: 32px;
         padding: 0px;
     }
     .footer-content > img {
-        margin-top: 65px;
         margin-left: 170px;
+        margin-top: 65px;
     }
 }
 
-@media (max-width:479px) {
+@media (max-width:534px) {
     .footer-content {
-        padding: 0; 
+        padding: 30px 10px 0 10px; 
     }
     .footer-content-block {
-        max-width: 278px;
+        row-gap: 40px;
+        align-items: center;
+        padding-bottom: 39px;
+    }
+    .footer-content-block > br {
+        display: none;
     }
     .footer-content > img {
-        margin-top: 40px;
+        width: 260px;
+        margin: auto;
     }
     .footer-content-block > h3 {
         font-size: 25px;
         line-height: 32.5px;
         text-align: center;
         text-wrap: wrap;
+        padding-inline: 15px;
     }
     .footer-content-block > h3 > br {
         display: none;
+    }
+    #geo-location {
+        align-items: baseline;
     }
 }
