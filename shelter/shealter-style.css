@@ -115,7 +115,7 @@ h5 {
     display: none;
 }
 
-@media (max-width:667px) {
+@media (max-width:767px) {
     .nav {
         justify-content: center;
     }
