@@ -1,3 +1,7 @@
+fetch('./pets.json')
+    .then(response => response.json())
+    .then(json => console.log(json));
+
 document.addEventListener("DOMContentLoaded", function() {
     let menu = document.getElementById("burger");
     let button = document.getElementById("burger-btn");
