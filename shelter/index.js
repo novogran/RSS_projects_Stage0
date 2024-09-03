@@ -1,6 +1,12 @@
-fetch('./pets.json')
+fetch('https://rolling-scopes-school.github.io/novogran-JSFEPRESCHOOL2024Q2/shelter/pets.json')
     .then(response => response.json())
-    .then(json => console.log(json));
+    .then(json => {
+        for(let object of json){
+            console.log(object);
+            const card = document.getElementById('animal-img');
+            card.setAttribute('src', object.img);
+        }
+    });
 
 document.addEventListener("DOMContentLoaded", function() {
     let menu = document.getElementById("burger");
