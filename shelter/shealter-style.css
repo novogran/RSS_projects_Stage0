@@ -990,19 +990,19 @@ footer {
 
 .burger-menu-item-about a{
     color: #CDCDCD;
+    text-underline-offset: 10px;
     text-decoration: 3px underline #F1CDB3;
 }
 
 .burger-menu-item a{
     color: #CDCDCD;
     text-decoration: none;
-    transition-duration: 0.4s;
 }
 
 .burger-menu-item a:hover {
+    text-underline-offset: 10px;
     text-decoration: 3px underline #F1CDB3;
     cursor: grab;
-    transition-duration: 0.4s;
 }
 
 #burger-menu-overlay {

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for(let item of links){
         item.addEventListener('click', () => toggleMenu());
     }
+    document.getElementById('burger-menu-item-about').addEventListener('click', () => toggleMenu());
     overlay.addEventListener('click', () => toggleMenu());
     function toggleMenu(){
         if (menu.classList.contains('burger-menu-active')) {
