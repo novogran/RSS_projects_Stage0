@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +19,23 @@
                         </div>
                     </a>
                     <nav class="nav">
-                        <a class="burger" href="">
-                            <img src="assets/img/line.jpg" alt="line">
-                            <img src="assets/img/line.jpg" alt="line">
-                            <img src="assets/img/line.jpg" alt="line">
-                        </a>
-                        <nav class="burger-menu_nav">
-                            <a class="burger-menu_link">About the shelter</a>
-                            <a href="./our-pets.html" class="burger-menu_link">Our pets</a>
-                            <a href="#help" class="burger-menu_link">Help the shelter</a>
-                            <a href="#contacts" class="burger-menu_link">Contacts</a>
-                        </nav>
-
+                        <div class="burger" id="burger">
+                            <label class="burger-btn" id="burger-btn">
+                                <span></span>
+                            </label>
+                            <ul class="burger-menu-nav">
+                                <li class="burger-menu-item-about"><a id="burger-menu-link">About the shelter</a></li>
+                                <li class="burger-menu-item"><a href="./our-pets.html" id="burger-menu-link">Our pets</a></li>
+                                <li class="burger-menu-item"><a href="#help" id="burger-menu-link">Help the shelter</a></li>
+                                <li class="burger-menu-item"><a href="#contacts" id="burger-menu-link">Contacts</a></li>
+                            </ul>
+                            <div id="burger-menu-overlay"></div>
+                        </div>
                         <ul class="nav-list">
-                            <li class="nav-item-about"><a class="nav-link">About the shelter</a>
-                            <li class="nav-item"><a href="./our-pets.html" class="nav-link">Our pets</a>
-                            <li class="nav-item"><a href="#help" class="nav-link">Help the shelter</a>
-                            <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a>
+                            <li class="nav-item-about"><a class="nav-link">About the shelter</a></li>
+                            <li class="nav-item"><a href="./our-pets.html" class="nav-link">Our pets</a></li>
+                            <li class="nav-item"><a href="#help" class="nav-link">Help the shelter</a></li>
+                            <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

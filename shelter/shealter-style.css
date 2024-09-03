@@ -111,21 +111,9 @@ h5 {
     flex-direction: column;
 }
 
-.nav > a {
-    display: none;
-}
-
 @media (max-width:767px) {
     .nav {
         justify-content: center;
-    }
-    .nav > ul {
-        display: none;
-    }
-    .nav > a {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
     }
 }
 
@@ -140,6 +128,12 @@ h5 {
     padding: 0;
     text-underline-offset: 7px;
     transition-duration: 0.4s;
+}
+
+@media (max-width:767px) {
+    .nav-list {
+        display: none;
+    }
 }
 
 .nav-item-about a{
@@ -924,54 +918,103 @@ footer {
     }
 }
 
-/* .nav {
-    padding-top: 120px;
-    position: fixed;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    background-color: #F9AFE9;
-    overflow-y: auto;
-    right: -100%;
-    -webkit-transition: 0.8s;
-    -moz-transition: 0.8s;
-    -o-transition: 0.8s;
-    transition: 0.8s;
-  } */
-
-.burger-menu_active .burger {
-    background-color: transparent;
-  }
-  .burger-menu_active .burger::before {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  .burger-menu_active .burger::after{
-    top: 0;
+.burger-menu-active .burger-btn > span {
     transform: rotate(-90deg);
-  }
-  /* .burger-menu_active .nav {
-    right: 0;
-    transition: 0.4s;
-  } */
+}
 
-  .burger-menu_nav {
-    padding-top: 120px;
+.burger-menu-active .burger-menu-nav{
+    right: 0;
+    transition-duration: 0.4s;
+}
+
+.burger-menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
-    z-index: 20;
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    background-color: #292929;
-    overflow-y: auto;
     right: -100%;
-    transition: 0.8s;
-  }
+    width: 320px;
+    height: 100%;
+    margin: 0;
+    gap: 40px;
+    padding: 248px 0;
+    z-index: 20;
+    list-style: none;
+    background-color: #292929;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: 0.4s;
+}
 
-  .burger-menu_active .burger-menu_nav {
-    right: 0;
-    transition: 0.4s;
+.burger-menu-nav > li > a{
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 51.2px;
+    text-align: left;
+}
+
+.burger-btn > span,
+.burger-btn > span::before,
+.burger-btn > span::after {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  z-index: 30;
+  background-color: #F1CDB3;
+  transition-duration: 0.4s;
+}
+.burger-btn > span::before {
+  content: '';
+  top: -10px;
+}
+.burger-btn > span::after {
+  content: '';
+  top: 10px;
+}
+
+.burger { 
+    display: none;
+}
+
+@media (max-width:767px) {
+    .burger {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        
+    }
+}
+
+.burger-menu-item-about a{
+    color: #CDCDCD;
+    text-decoration: 3px underline #F1CDB3;
+}
+
+.burger-menu-item a{
+    color: #CDCDCD;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+.burger-menu-item a:hover {
+    text-decoration: 3px underline #F1CDB3;
+    cursor: grab;
+    transition-duration: 0.4s;
+}
+
+#burger-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+  }
+  .burger-menu-active #burger-menu-overlay {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
   }
