@@ -436,30 +436,10 @@ h5 {
     }
 }
 
-.animalcard-jennifer {
-    margin-inline: 90px;
-}
-
-@media (max-width:1000px) {
-
-    .animalcard_woody {
-        display:none;
-    }
-    .animalcard-jennifer {
-        margin: 0px 0px 0px 40px;
-    }
-}
-
 @media (max-width:667px) {
     .slider{
         padding: 40px 0px 42px 0px;
         justify-content: space-around;
-    }
-    .animalcard_woody {
-        display:none;
-    }
-    .animalcard-jennifer {
-        display:none;
     }
 }
 
@@ -482,6 +462,20 @@ h5 {
     background: #FDDCC4;
     cursor: grab;
     transition-duration: 0.4s;
+}
+
+.animalcard-animation {
+    will-change: transform;
+    animation: scrolling-left 1.4s linear;
+}
+
+@keyframes scrolling-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-40%);
+    }
 }
 
 .button-arrow-previous {
