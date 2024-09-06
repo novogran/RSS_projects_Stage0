@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     let menu = document.getElementById("burger")
+    let popup = document.getElementById("popup")
     let button = document.getElementById("burger-btn")
     let links = document.getElementsByClassName('burger-menu-item')
-    let overlay = document.getElementById('burger-menu-overlay')
+    let burger_overlay = document.getElementById('burger-menu-overlay')
+    let popup_overlay = document.getElementById('popup-overlay')
     let body = document.getElementById('html')
     let arrow_previous = document.getElementById('button-arrow-previous')
     let arrrow_next = document.getElementById('button-arrow-next')
@@ -14,25 +16,36 @@ document.addEventListener("DOMContentLoaded", function() {
     let prevFlag = false
     let nextFlag = false
 
+                let list = document.getElementById('cards-slider-ul')
+                let width = 270
+                let count = 3
+                let position = 0
+                let listElems = document.getElementById('cards-slider-ul').querySelectorAll('li')
+
     fetch('https://rolling-scopes-school.github.io/novogran-JSFEPRESCHOOL2024Q2/shelter/pets.json')
         .then(response => response.json())
         .then(json => {
 
-            let cardsSlider =  document.getElementById('slider')
+            let cardsSlider =  document.getElementById('cards-slider-ul')
+
 
             if(window.matchMedia("(max-width: 562px)").matches) {
                 cardConstructor(1)
             } else {
                 if(window.matchMedia("(max-width: 904px)").matches) {
                     cardConstructor(2)
-                } else {cardConstructor(3)}
+                } else {
+                    cardConstructor(3)
+                }
             }
 
             window.matchMedia('(max-width: 904px)').addEventListener('change', (e) => {
-                if(!e.matches){ 
+                if(!e.matches){
+                    cardSet.clear()
                     clearCards()
                     cardConstructor(3)
                 } else {
+                    cardSet.clear()
                     clearCards()
                     cardConstructor(2)
                 }
@@ -40,41 +53,44 @@ document.addEventListener("DOMContentLoaded", function() {
 
             window.matchMedia('(max-width: 562px)').addEventListener('change', (e) => {
                 if(e.matches){
+                    cardSet.clear()
                     clearCards()
                     cardConstructor(1)
                 } else {
+                    cardSet.clear()
                     clearCards()
                     cardConstructor(2)
                 }
             })
 
             function clearCards(){
-                for(let i = cardsSlider.children.length-1; i>1; i--) {
-                    cardsSlider.children[1].remove()
-                }  
+                for(let i = cardsSlider.children.length; i > 0 ; i--){
+                    cardsSlider.children[0].remove()
+                } 
             }
             
             function cardConstructor(cardCount){
-                console.log(cardSet)
                 if(setJson.size == 0) setJson = new Set(json)
-                if(prevFlag){
-                    cardSet = new Set(cardSetPrevious)
-                    prevFlag = !prevFlag
-                } else {
-                    if(nextFlag) {
-                        cardSet = new Set(cardSetNext)
-                        nextFlag = !nextFlag
-                    }
-                }
+                // if(prevFlag){
+                //     cardSet = new Set(cardSetPrevious)
+                //     prevFlag = !prevFlag
+                // } else {
+                //     if(nextFlag) {
+                //         cardSet = new Set(cardSetNext)
+                //         nextFlag = !nextFlag
+                //     }
+                // }
 
                 while(cardSet.size < cardCount){
                     cardSet.add(Array.from(setJson)[(Math.floor(Math.random() * Array.from(setJson).length))])
                 }
-                console.log(cardSet.size)
                 
                 for(let object of cardSet){
+                    let cardLi = document.createElement('li')
+                    cardLi.setAttribute('z-index', 5)
+                    document.getElementById('cards-slider-ul').append(cardLi)
                     let animalcard = document.createElement('div')
-                    document.getElementById('button-arrow-next').before(animalcard)
+                    cardLi.append(animalcard)
                     animalcard.setAttribute('class', "animalcard")
                     animalcard.setAttribute('id', "animalcard")
                     let img = document.createElement('img')
@@ -93,9 +109,18 @@ document.addEventListener("DOMContentLoaded", function() {
                     button.innerHTML = 'Learn more'
                     animalcard.appendChild(button)
                 }
+                for(let card of document.getElementsByClassName('animalcard')){
+                    card.addEventListener('click', () => togglePopup(card.getElementsByTagName('h4')[0]))
+                }
             }
 
             arrow_previous.addEventListener('click', () => {
+                            
+                // position -= width * count
+                // position = Math.max(position, -width * (listElems.length - count))
+                // position = 50
+                // list.style.animation = 'scrolling-right 0.6s linear'
+
                 setJson = new Set(json)
                 setJson = new Set(setJson.difference(cardSet))
                 cardSetPrevious = new Set(cardSet)
@@ -105,9 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(cardSetNext.size > 0) {
                     if(cardSetNext.has(cardSet)) cardSet = new Set(cardSetNext)
                 }
-                for(let card of document.getElementsByClassName('animalcard')){
-                    card.classList.add('animalcard-animation')
-                }
+                document.getElementById('cards-slider-ul').classList.add('animalcard-animation-right')
                 clearCards()
                 if(window.matchMedia("(max-width: 562px)").matches) {
                     cardConstructor(1)
@@ -119,6 +142,12 @@ document.addEventListener("DOMContentLoaded", function() {
             })
 
             arrrow_next.addEventListener('click', () => {
+
+                // position += width * count
+                // position = Math.min(position, 0)
+                // position = -50
+                // list.style.animation = 'scrolling-left 0.6s linear'
+
                 setJson = new Set(json)
                 setJson = new Set(setJson.difference(cardSet))
                 cardSetNext = new Set(cardSet)
@@ -128,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(cardSetPrevious.size > 0) {
                     if(cardSetPrevious.has(cardSet)) cardSet = new Set(cardSetPrevious)
                 } 
+                
                 clearCards()
                 if(window.matchMedia("(max-width: 562px)").matches) {
                     cardConstructor(1)
@@ -136,6 +166,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         cardConstructor(2)
                     } else {cardConstructor(3)}
                 }
+                
+                document.getElementById('cards-slider').classList.add('animalcard-animation-left')
             })
         });
 
@@ -150,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     document.getElementById('burger-menu-item-about').addEventListener('click', () => toggleMenu())
-    overlay.addEventListener('click', () => toggleMenu())
+    burger_overlay.addEventListener('click', () => toggleMenu())
     function toggleMenu(){
         if (menu.classList.contains('burger-menu-active')) {
             menu.classList.remove('burger-menu-active')
@@ -158,6 +190,37 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             menu.classList.add('burger-menu-active')
             body.style.overflow = 'hidden'
+        }
+    }
+    document.getElementById('close-button').addEventListener('click', () => togglePopup())
+    popup_overlay.addEventListener('click', () => togglePopup())
+
+    function togglePopup(text){
+        console.log(text)
+        if (popup.classList.contains('popup-active')) {
+            popup.classList.remove('popup-active')
+            body.style.overflow = 'visible'
+        } else {
+            popup.classList.add('popup-active')
+            body.style.overflow = 'hidden'
+        }
+        
+        if(text != undefined) {
+            for(let item of setJson){
+                if(item.name == text.innerText){
+                    console.log(item.age)
+                    document.getElementById('popup-img').setAttribute('src', item.img)
+                    document.getElementById('popup-name').innerText = item.name
+                    document.getElementById('popup-breed').innerText = item.type + ' - ' + item.breed
+                    document.getElementById('popup-text').innerText = item.description
+                    document.getElementById('popup-age').innerHTML = 'Age: ' + item.age 
+                    document.getElementById('popup-inoculations').innerText = 'Inoculations: ' + item.inoculations
+                    document.getElementById('popup-diseases').innerText = 'Diseases: ' + item.diseases
+                    document.getElementById('popup-parasites').innerText = 'Parasites: ' + item.parasites
+                }
+            }
+            // card.getElementById('name').innerHTML(car)
+            // document.getElementById('content').getElementsByTagName('img').setAttribute('src',card.)
         }
     }
 });
