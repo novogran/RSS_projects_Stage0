@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let menu = document.getElementById("burger")
     let popup = document.getElementById("popup")
-    let button = document.getElementById("burger-btn")
+    let burger_button = document.getElementById("burger-btn")
     let links = document.getElementsByClassName('burger-menu-item')
     let burger_overlay = document.getElementById('burger-menu-overlay')
     let popup_overlay = document.getElementById('popup-overlay')
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let setJson = new Set()
     let prevFlag = false
     let nextFlag = false
+    let cardsSlider =  document.getElementById('cards-slider-ul')
 
                 let list = document.getElementById('cards-slider-ul')
                 let width = 270
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(json => {
 
-            let cardsSlider =  document.getElementById('cards-slider-ul')
+            
 
 
             if(window.matchMedia("(max-width: 562px)").matches) {
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
     
-    button.addEventListener("click", (e) => {
+    burger_button.addEventListener("click", (e) => {
         e.preventDefault()
         toggleMenu()
     });
@@ -196,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function() {
     popup_overlay.addEventListener('click', () => togglePopup())
 
     function togglePopup(text){
-        console.log(text)
         if (popup.classList.contains('popup-active')) {
             popup.classList.remove('popup-active')
             body.style.overflow = 'visible'
@@ -208,12 +208,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(text != undefined) {
             for(let item of setJson){
                 if(item.name == text.innerText){
-                    console.log(item.age)
                     document.getElementById('popup-img').setAttribute('src', item.img)
                     document.getElementById('popup-name').innerText = item.name
                     document.getElementById('popup-breed').innerText = item.type + ' - ' + item.breed
                     document.getElementById('popup-text').innerText = item.description
-                    document.getElementById('popup-age').innerHTML = 'Age: ' + item.age 
+                    document.getElementById('popup-age').innerHTML = 'Age: ' + item.age
                     document.getElementById('popup-inoculations').innerText = 'Inoculations: ' + item.inoculations
                     document.getElementById('popup-diseases').innerText = 'Diseases: ' + item.diseases
                     document.getElementById('popup-parasites').innerText = 'Parasites: ' + item.parasites

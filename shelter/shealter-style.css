@@ -1127,7 +1127,7 @@ footer {
 .popup-info > ul {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 11px;
     padding-left: 15px;
     margin-top: 40px
 }
@@ -1152,6 +1152,7 @@ footer {
 
 #popup-text {
     margin: 40px 0px 40px 0px;
+    line-height: 17px;
 }
 
 @media (max-width:900px) {
@@ -1161,17 +1162,18 @@ footer {
     .popup-info > h4 {
         margin-bottom: 20px;
     }
-    .popup-text {
+    #popup-text {
         font-family: Georgia;
         font-size: 13px;
         font-weight: 400;
         line-height: 14.3px;
         letter-spacing: 0.06em;
         text-align: left;
+        margin: 20px 0px 20px 0px;
     }
     .popup-info > ul {
         row-gap: 5px;
-        margin-top: 40px;
+        /* margin-top: 40px; */
     }
 }
 

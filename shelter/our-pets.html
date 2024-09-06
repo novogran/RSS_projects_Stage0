@@ -44,55 +44,40 @@
         <div class="our-friends">
             <section class="pets-content">
                 <h1 class="pets-heading">Our friends who<br>are looking for a house</h1>
+                <div class="popup" id="popup">
+                    <div class="animal-info" id="animal-info">
+                        <button class="close-button" id="close-button">
+                            <img src="./assets/img/Vector.png" alt="close">
+                        </button>
+                        <div class="content">
+                            <img src="" alt="animal" id="popup-img">
+                            <div class="popup-info" id="popup-info">
+                                <h3 id="popup-name"></h3>
+                                <h4 id="popup-breed"></h4>
+                                <h5 id="popup-text"></h5>
+                                <ul>
+                                    <li><h5 id="popup-age"></h5></li>
+                                    <li><h5 id="popup-inoculations"></h5></li>
+                                    <li><h5 id="popup-diseases"></h5></li>
+                                    <li><h5 id="popup-parasites"></h5></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="popup-overlay"></div>
+                </div>
                 <div class="cards-conteiner">
                     <section class="slider" >
-                        <form class="animalcard-katrine" action="#katrine">
-                            <img src="./assets/img/pets-katrine.png" alt="katrine">
-                            <h4 class="animalcard-text">Katrine</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-jennifer" action="#jennifer">
-                            <img src="./assets/img/pets-jennifer.png" alt="jennifer">
-                            <h4 class="animalcard-text">Jennifer</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-woody" action="#woody">
-                            <img src="./assets/img/pets-woody.png" alt="woody">
-                            <h4 class="animalcard-text">Woody</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-sophia" action="#sophia">
-                            <img src="./assets/img/pets-sophia.png" alt="woody">
-                            <h4 class="animalcard-text">Sophia</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-timmy" action="#timmy">
-                            <img src="./assets/img/pets-timmy.png" alt="katrine">
-                            <h4 class="animalcard-text">Timmy</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-charly" action="#charly">
-                            <img src="./assets/img/pets-charly.png" alt="jennifer">
-                            <h4 class="animalcard-text">Charly</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-scarlett" action="#scarlett">
-                            <img src="./assets/img/pets-scarlet.png" alt="woody">
-                            <h4 class="animalcard-text">Scarlett</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
-                        <form class="animalcard-freddie" action="#freddie">
-                            <img src="./assets/img/pets-freddie.png" alt="woody">
-                            <h4 class="animalcard-text">Freddie</h4>
-                            <button class="animalcard-button" type="button">Learn more</button>
-                        </form>
+                        <ul class="cards-slider-ul" id="cards-slider-ul">
+
+                        </ul>
                     </section>
                     <div class="navigation">
-                        <form action="#start"><button class="button-start" type="button" disabled>&lt;&lt;</button></form>
-                        <form action="#previous"><button class="button-previous" type="button" disabled>&lt;</button></form>
-                        <form><button class="button-page" type="button">1</button></form>
-                        <form action="#next"><button class="button-next" type="button">&gt;</button></form>
-                        <form action="#end"><button class="button-end" type="button">&gt;&gt;</button></form>
+                        <form action="#start"><button class="button-start" id="button-start" type="button">&lt;&lt;</button></form>
+                        <form action="#previous"><button class="button-previous" id="button-previous" type="button">&lt;</button></form>
+                        <form><button class="button-page" id="button-page" type="button">1</button></form>
+                        <form action="#next"><button class="button-next" id="button-next" type="button">&gt;</button></form>
+                        <form action="#end"><button class="button-end" id="button-end" type="button">&gt;&gt;</button></form>
                     </div>
                 </div>
             </section>
