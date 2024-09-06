@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(cardSetNext.size > 0) {
                     if(cardSetNext.has(cardSet)) cardSet = new Set(cardSetNext)
                 }
-                document.getElementById('cards-slider-ul').classList.add('animalcard-animation-right')
+                // document.getElementById('cards-slider-ul').classList.add('animalcard-animation-right')
                 clearCards()
                 if(window.matchMedia("(max-width: 562px)").matches) {
                     cardConstructor(1)
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     } else {cardConstructor(3)}
                 }
                 
-                document.getElementById('cards-slider').classList.add('animalcard-animation-left')
+                // document.getElementById('cards-slider').classList.add('animalcard-animation-left')
             })
         });
 
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
             popup.classList.add('popup-active')
             body.style.overflow = 'hidden'
         }
-        
+
         if(text != undefined) {
             for(let item of setJson){
                 if(item.name == text.innerText){
