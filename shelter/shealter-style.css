@@ -388,11 +388,19 @@ h5 {
     }
 }
 
+.cards-slider {
+    display: flex;
+    width: 990px;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
 .slider {
     max-width: 1280px;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    overflow: hidden;
     justify-content: space-between;
     padding: 56px 0px 60px 0px;
 }
@@ -467,56 +475,29 @@ h5 {
 .cards-slider-ul {
     display: flex;
     list-style: none;
-    width: 9999px;
     column-gap: 90px;
     margin: 0 auto;
     padding: 0;
     justify-content: space-between;
-}
-
-.animalcard-animation-left {
-    will-change: transform;
-    animation: scrolling-left 1.4s linear;
-}
-
-.animalcard-animation-right {
-    will-change: transform;
-    animation: scrolling-right 1.4s linear;
-}
-
-@keyframes scrolling-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-}
-
-@keyframes scrolling-right {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(100%);
-    }
+    margin-left: -1080px;
+    transition: 400ms;
 }
 
 .button-arrow-previous {
-    margin: 3px 51px 0px 40px;
+    /* margin: 3px 51px 0px 40px; */
 }
 
 .button-arrow-next {
-    margin: 3px 40px 0px 51px;
+    /* margin: 3px 40px 0px 51px; */
 }
 
 @media (max-width:1000px) {
     .button-arrow-previous {
-        margin: 3px 12px 0px 30px;
+        /* margin: 3px 12px 0px 30px; */
     }
     
     .button-arrow-next {
-        margin: 3px 30px 0px 12px;
+        /* margin: 3px 30px 0px 12px; */
     }
 }
 
@@ -525,11 +506,11 @@ h5 {
         order: 1;
     }
     .button-arrow-previous {
-        margin: 20px 12px 0px 30px;
+        /* margin: 20px 12px 0px 30px; */
     }
     
     .button-arrow-next {
-        margin: 20px 30px 0px 12px;
+        /* margin: 20px 30px 0px 12px; */
     }
 }
 
