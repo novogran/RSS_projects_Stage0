@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let links = document.getElementsByClassName('burger-menu-item');
     let burger_overlay = document.getElementById('burger-menu-overlay')
     let body = document.getElementById('html');
-    let cardsSlider =  document.getElementById('cards-slider-ul')
     let popup_overlay = document.getElementById('popup-overlay')
     let cardsArray = new Array()
     let next_button = document.getElementById('button-next')
@@ -20,12 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             cardConstructor(6)
 
-            // function clearCards(){
-            //     for(let i = cardsSlider.children.length; i > 0 ; i--){
-            //         cardsSlider.children[0].remove()
-            //     } 
-            // }
-
             function cardConstructor(cardCount){
                 for(let i = 0; i<cardCount; i++){
                     let cardsSet = new Set()
@@ -34,11 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     cardsArray = cardsArray.concat(Array.from(cardsSet))
                 }
-                // if(setJson.size == 0) setJson = new Set(json)
-
-                // while(cardSet.size < cardCount){
-                //     cardSet.add(Array.from(setJson)[(Math.floor(Math.random() * Array.from(setJson).length))])
-                // }
                 
                 for(let object of cardsArray){
                     let cardLi = document.createElement('li')
@@ -122,39 +110,45 @@ document.addEventListener("DOMContentLoaded", function() {
             let position = 0
             let page = 1
             let numberOfPages = 6
+            let cardsCount = 8
 
-            if(window.matchMedia("(max-width: 457px)").matches) {
+            if(window.matchMedia("(max-width: 581px)").matches) {
                 width = 310
-                numberOfPages = 16 
+                numberOfPages = 16
+                cardsCount = 3
             } else {
-                if(window.matchMedia("(max-width: 1000px)").matches) {
+                if(window.matchMedia("(max-width: 1279px)").matches) {
                     width = 620
                     numberOfPages = 8
-                    
+                    cardsCount = 6
                 }
             }
 
-            window.matchMedia('(max-width: 1000px)').addEventListener('change', (e) => {
+            window.matchMedia('(max-width: 1279px)').addEventListener('change', (e) => {
                 if(!e.matches){
                     width = 1240
                     numberOfPages = 6
-                    console.log(numberOfPages)
+                    cardsCount = 8
+                    console.log(page)
                 } else {
                     width = 620
                     numberOfPages = 8
-                    console.log(numberOfPages)
+                    cardsCount = 6
+                    console.log(page)
                 }
             })
 
-            window.matchMedia('(max-width: 457px)').addEventListener('change', (e) => {
+            window.matchMedia('(max-width: 581px)').addEventListener('change', (e) => {
                 if(e.matches){
                     width = 310
                     numberOfPages = 16
-                    console.log(numberOfPages)
+                    cardsCount = 3
+                    console.log(page)
                 } else {
                     width = 620
                     numberOfPages = 8
-                    console.log(numberOfPages)
+                    cardsCount = 6
+                    console.log(page)
                 }
             })
 
@@ -162,13 +156,13 @@ document.addEventListener("DOMContentLoaded", function() {
             next_button.addEventListener("click", (e) => {
                 if(page_button.innerHTML < numberOfPages) page_button.innerHTML = ++page
                 position -= width * count;
-                position = Math.max(position, -width * ((listElems.length/8) - count))
+                position = Math.max(position, -width * ((listElems.length/cardsCount) - count))
                 cardsList.style.marginLeft = position + 'px';
                 prev_button.disabled = false
                 start_button.disabled = false
                 start_button.style.border = '2px solid #F1CDB3'
                 prev_button.style.border = '2px solid #F1CDB3'
-                if(page == 6) {
+                if(page == numberOfPages) {
                     end_button.disabled = true
                     next_button. disabled = true
                     end_button.style.border = '2px solid #CDCDCD'
@@ -206,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             end_button.addEventListener("click", (e) => {
                 position -= width * numberOfPages;
-                position = Math.max(position, -width * ((listElems.length/8) - count))
+                position = Math.max(position, -width * ((listElems.length/cardsCount) - count))
                 cardsList.style.marginLeft = position + 'px'
                 page_button.innerHTML = page = numberOfPages
                 end_button.disabled = true

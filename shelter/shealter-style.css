@@ -467,7 +467,8 @@ h5 {
 .cards-slider-ul {
     display: flex;
     list-style: none;
-    /* width: 9999px; */
+    width: 9999px;
+    column-gap: 90px;
     margin: 0 auto;
     padding: 0;
     justify-content: space-between;
@@ -947,7 +948,6 @@ footer {
 .burger-menu-nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -955,7 +955,7 @@ footer {
     width: 320px;
     height: 100%;
     margin: 0;
-    gap: 40px;
+    gap: 41.6px;
     padding: 248px 0;
     z-index: 20;
     list-style: none;
@@ -970,6 +970,7 @@ footer {
     font-weight: 400;
     line-height: 51.2px;
     text-align: left;
+    text-underline-offset: 15px;
 }
 
 .burger-btn > span,
@@ -1056,7 +1057,6 @@ footer {
     .animal-info{
         width: 682px;
         /* height: 402px; */
-        left: 53.4%;
     }
 }
 
@@ -1171,22 +1171,28 @@ footer {
         font-size: 13px;
         font-weight: 400;
         line-height: 14.3px;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.0591em;
         text-align: left;
-        margin: 20px 0px 20px 0px;
+        margin: 20px 0px 17px 0px;
     }
     .popup-info > ul {
-        row-gap: 5px;
-        /* margin-top: 40px; */
+        row-gap: 6px;
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
     .popup-info {
         padding: 10px;
     }
-    .popup-info > ul {
-        row-gap: 5px;
+    .popup-name {
+        text-align: center;
+    }
+    .popup-breed {
+        text-align: center;
+    }
+    #popup-text {
+        margin: 20px 0px 20px 0px;
+        text-align: justify;
     }
 }
 
@@ -1215,6 +1221,20 @@ footer {
     padding-top: 2px;
 }
 
+@media (max-width:900px) {
+    .close-button {
+        top: 26.9%;
+        left: 93.2%;
+    }
+}
+
+@media (max-width:500px) {
+    .close-button {
+        top: 30.6%;
+        left: 76.6%;
+    }
+}
+
 #popup-overlay {
     display: none;
     position: fixed;
@@ -1224,6 +1244,7 @@ footer {
     height: 100%;
     z-index: 10;
   }
+
 .popup-active #popup-overlay {
     display: block;
     background-color: rgba(0, 0, 0, 0.5);
