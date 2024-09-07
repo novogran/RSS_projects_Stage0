@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
                             document.getElementById('popup-name').innerText = item.name
                             document.getElementById('popup-breed').innerText = item.type + ' - ' + item.breed
                             document.getElementById('popup-text').innerText = item.description
-                            document.getElementById('popup-age').innerHTML = 'Age: ' + item.age
-                            document.getElementById('popup-inoculations').innerText = 'Inoculations: ' + item.inoculations
-                            document.getElementById('popup-diseases').innerText = 'Diseases: ' + item.diseases
-                            document.getElementById('popup-parasites').innerText = 'Parasites: ' + item.parasites
+                            document.getElementById('popup-age').innerHTML = item.age
+                            document.getElementById('popup-inoculations').innerText = item.inoculations
+                            document.getElementById('popup-diseases').innerText = item.diseases
+                            document.getElementById('popup-parasites').innerText = item.parasites
                         }
                     }
                 }

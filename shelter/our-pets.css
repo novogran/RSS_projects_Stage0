@@ -737,10 +737,6 @@ footer {
     display: none;
     width: 952px;
     /* height: 552px; */
-    position: fixed;
-    top: 50%; 
-    left: 52%;
-    transform: translate(-50%, -50%);
     z-index: 20;
 }
 
@@ -841,6 +837,10 @@ footer {
     letter-spacing: 0.06em;
     text-align: left;
     margin: 0;
+}
+
+.popup-info > ul > li > h5 > span {
+    font-weight: 400;
 }
 
 .popup-info > h4 {

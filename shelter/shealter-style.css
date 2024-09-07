@@ -1146,6 +1146,10 @@ footer {
     margin: 0;
 }
 
+.popup-info > ul > li > h5 > span {
+    font-weight: 400;
+}
+
 .popup-info > h4 {
     margin: 10px 0px 0px 0px;
 }
