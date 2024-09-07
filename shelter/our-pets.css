@@ -307,6 +307,27 @@ h5 {
     }
 }
 
+.slider .animalcard {
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9px;
+}
+
+.slider .animalcard:hover{
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: grab;
+    transition-duration: 0.4s;
+
+    .animalcard-button {
+        background-color: #FDDCC4;
+        cursor: grab;
+        transition-duration: 0.4s;
+    }
+}
+
 .slider > form {
     border-radius: 9px;
     background-color: #FAFAFA;
@@ -324,7 +345,20 @@ h5 {
     flex-direction: column;
     flex-wrap: wrap;
     overflow: hidden;
-    transition: margin-left 1000ms;
+    margin-left: 0px;
+    transition: 1000ms;
+}
+
+@media (max-width:1000px) {
+    .cards-slider-ul {
+        height: 1365px;
+    }
+}
+
+.animalcard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .animalcard-text {
@@ -378,17 +412,23 @@ h5 {
 }
 
 .button-start {
-    color: #CDCDCD;
-    border: 2px solid #CDCDCD;
-    background-color: #F6F6F6;
+    border: 2px solid #F1CDB3;
     
 }
 
+.button-start:hover {
+    background-color: #F1CDB3;
+    cursor: grab;
+}
+
 .button-previous {
-    color: #CDCDCD;
-    border: 2px solid #CDCDCD;
-    background-color: #F6F6F6;
+    border: 2px solid #F1CDB3;
     margin-inline: 20px;
+}
+
+.button-previous:hover {
+    background-color: #F1CDB3;
+    cursor: grab;
 }
 
 .button-page {
@@ -424,7 +464,8 @@ h5 {
         padding: 20px 0px 30px 0px;
     }
     .slider {
-        padding-inline: 94px;
+        width: 580px;
+        /* padding-inline: 94px; */
         row-gap: 29px;
     }
     .slider > form {
@@ -457,7 +498,8 @@ h5 {
         padding: 0px 0px 42px 0px;
     }
     .slider {
-        padding-inline: 10px;
+        width: 270px;
+        /* padding-inline: 10px; */
         row-gap: 29px;
         justify-content: center;
     }
@@ -678,8 +720,8 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 10;
   }
   .burger-menu-active #burger-menu-overlay {
@@ -730,6 +772,10 @@ footer {
     border-radius: 9px;
     z-index: 30;
     background-color: #FAFAFA;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @media (max-width:900px) {
     .content {
@@ -847,6 +893,10 @@ footer {
     z-index: 30;
     padding: 0;
     margin: 2px 10px 0px 0px;
+    position: fixed;
+    top: 18.4%;
+    left: 86.4%;
+    transform: translate(-50%, -50%);
 }
 
 .close-button:hover{

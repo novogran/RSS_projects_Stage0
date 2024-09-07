@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 for(let object of cardSet){
                     let cardLi = document.createElement('li')
-                    cardLi.setAttribute('z-index', 5)
                     document.getElementById('cards-slider-ul').append(cardLi)
                     let animalcard = document.createElement('div')
                     cardLi.append(animalcard)

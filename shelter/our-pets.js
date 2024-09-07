@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 for(let object of cardsArray){
                     let cardLi = document.createElement('li')
-                    cardLi.setAttribute('z-index', 5)
                     document.getElementById('cards-slider-ul').append(cardLi)
                     let animalcard = document.createElement('div')
                     cardLi.append(animalcard)
@@ -113,40 +112,111 @@ document.addEventListener("DOMContentLoaded", function() {
                             document.getElementById('popup-parasites').innerText = 'Parasites: ' + item.parasites
                         }
                     }
-                    // card.getElementById('name').innerHTML(car)
                 }
             }
 
-            burger_button.addEventListener("click", (e) => {
-                e.preventDefault()
-                toggleMenu()
-            });
-
             let width = 1240
             let count = 1
-
-            let list = document.getElementById('cards-slider-ul')
+            let cardsList = document.getElementById('cards-slider-ul')
             let listElems = document.getElementById('cards-slider-ul').getElementsByClassName('animalcard')
             let position = 0
             let page = 1
+            let numberOfPages = 6
+
+            if(window.matchMedia("(max-width: 457px)").matches) {
+                width = 310
+                numberOfPages = 16 
+            } else {
+                if(window.matchMedia("(max-width: 1000px)").matches) {
+                    width = 620
+                    numberOfPages = 8
+                    
+                }
+            }
+
+            window.matchMedia('(max-width: 1000px)').addEventListener('change', (e) => {
+                if(!e.matches){
+                    width = 1240
+                    numberOfPages = 6
+                    console.log(numberOfPages)
+                } else {
+                    width = 620
+                    numberOfPages = 8
+                    console.log(numberOfPages)
+                }
+            })
+
+            window.matchMedia('(max-width: 457px)').addEventListener('change', (e) => {
+                if(e.matches){
+                    width = 310
+                    numberOfPages = 16
+                    console.log(numberOfPages)
+                } else {
+                    width = 620
+                    numberOfPages = 8
+                    console.log(numberOfPages)
+                }
+            })
+
 
             next_button.addEventListener("click", (e) => {
-                if(page_button.innerHTML < 6) page_button.innerHTML = ++page
+                if(page_button.innerHTML < numberOfPages) page_button.innerHTML = ++page
                 position -= width * count;
-                position = Math.max(position, -width * ((listElems.length/8) - count));
-                list.style.marginLeft = position + 'px';
+                position = Math.max(position, -width * ((listElems.length/8) - count))
+                cardsList.style.marginLeft = position + 'px';
+                prev_button.disabled = false
+                start_button.disabled = false
+                start_button.style.border = '2px solid #F1CDB3'
+                prev_button.style.border = '2px solid #F1CDB3'
+                if(page == 6) {
+                    end_button.disabled = true
+                    next_button. disabled = true
+                    end_button.style.border = '2px solid #CDCDCD'
+                    next_button.style.border = '2px solid #CDCDCD'
+                }
             });
             prev_button.addEventListener("click", (e) => {
                 if(page_button.innerHTML > 1) page_button.innerHTML = --page
-                position += width * count;
+                position += width * count
                 position = Math.min(position, 0)
-                list.style.marginLeft = position + 'px';
+                cardsList.style.marginLeft = position + 'px'
+                next_button.disabled = false
+                end_button.disabled = false
+                end_button.style.border = '2px solid #F1CDB3'
+                next_button.style.border = '2px solid #F1CDB3'
+                if(page == 1) {
+                    start_button.disabled = true
+                    prev_button.disabled = true
+                    start_button.style.border = '2px solid #CDCDCD'
+                    prev_button.style.border = '2px solid #CDCDCD'
+                }
             });
             start_button.addEventListener("click", (e) => {
-
+                position = 0
+                cardsList.style.marginLeft = position + 'px'
+                page_button.innerHTML = page = 1
+                start_button.disabled = true
+                prev_button.disabled = true
+                end_button.disabled = false
+                next_button. disabled = false
+                start_button.style.border = '2px solid #CDCDCD'
+                prev_button.style.border = '2px solid #CDCDCD'
+                end_button.style.border = '2px solid #F1CDB3'
+                next_button.style.border = '2px solid #F1CDB3'
             });
             end_button.addEventListener("click", (e) => {
-
+                position -= width * numberOfPages;
+                position = Math.max(position, -width * ((listElems.length/8) - count))
+                cardsList.style.marginLeft = position + 'px'
+                page_button.innerHTML = page = numberOfPages
+                end_button.disabled = true
+                next_button.disabled = true
+                start_button.disabled = false
+                prev_button.disabled = false
+                end_button.style.border = '2px solid #CDCDCD'
+                next_button.style.border = '2px solid #CDCDCD'
+                start_button.style.border = '2px solid #F1CDB3'
+                prev_button.style.border = '2px solid #F1CDB3'
             });
 
         })
