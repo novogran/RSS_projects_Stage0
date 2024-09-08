@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let body = document.getElementById('html')
     let arrow_previous = document.getElementById('button-arrow-previous')
     let arrow_next = document.getElementById('button-arrow-next')
-    let cardsSlider = document.getElementById('cards-slider-ul')
     let cardsArray = new Array()
     let width = 1080
     let cardsList = document.getElementById('cards-slider-ul')
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(json => {
 
 
-            if (window.matchMedia("(max-width: 667px)").matches) {
+            if (window.matchMedia("(max-width: 700px)").matches) {
                 width = 270
                 cardsCount = 1
                 clearCards()
@@ -32,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     clearCards()
                     cardConstructor(2)
                 } else {
+                    width = 1080
+                    cardsCount = 3
                     clearCards()
                     cardConstructor(3)
                 }
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
 
-            window.matchMedia('(max-width: 667px)').addEventListener('change', (e) => {
+            window.matchMedia('(max-width: 700px)').addEventListener('change', (e) => {
                 if (e.matches) {
                     width = 270
                     cardsCount = 1
@@ -72,21 +73,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             function cardConstructor(cardCount) {
+                let flag = false
+
                 for (let i = 0; i <= cardsArray.length + 1; i++) cardsArray.pop()
 
-                for (let i = 0; i < 3; i++) {
+                while (cardsArray.length < 3) {
                     let cardSet = new Set()
                     while (cardSet.size < cardCount) {
                         cardSet.add(json[(Math.floor(Math.random() * json.length))])
                     }
-                    cardsArray.push(cardSet)
+                    for(let item of cardsArray){
+                        flag = false
+                        for(let card of cardSet){
+                            if(item.has(card)) flag = true
+                        }
+                    }
+                    if(flag == false) cardsArray.push(cardSet)
                 }
 
                 for (let object of cardsArray) {
                     drawCard(object, '')
-                }
-                for (let card of document.getElementsByClassName('animalcard')) {
-                    card.addEventListener('click', () => togglePopup(card.getElementsByTagName('h4')[0]))
                 }
                 cardsList.style.transition = 'none'
                 cardsList.style.marginLeft = -width + 'px';
@@ -175,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.setAttribute('type', "button")
                     button.innerHTML = 'Learn more'
                     animalcard.appendChild(button)
+                    cardLi.addEventListener('click', () => togglePopup(cardLi.getElementsByTagName('h4')[0]))
                 }
             }
             burger_button.addEventListener("click", (e) => {
@@ -197,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     body.style.overflow = 'hidden'
                 }
             }
+
             document.getElementById('close-button').addEventListener('click', () => togglePopup())
             popup_overlay.addEventListener('click', () => togglePopup())
         
