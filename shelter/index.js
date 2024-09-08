@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     let menu = document.getElementById("burger")
     let popup = document.getElementById("popup")
@@ -8,150 +8,150 @@ document.addEventListener("DOMContentLoaded", function() {
     let popup_overlay = document.getElementById('popup-overlay')
     let body = document.getElementById('html')
     let arrow_previous = document.getElementById('button-arrow-previous')
-    let arrrow_next = document.getElementById('button-arrow-next')
-    let setJson = new Set()
-    let cardsSlider =  document.getElementById('cards-slider-ul')
+    let arrow_next = document.getElementById('button-arrow-next')
+    let cardsSlider = document.getElementById('cards-slider-ul')
     let cardsArray = new Array()
+    let width = 1080
+    let cardsList = document.getElementById('cards-slider-ul')
+    let cardsCount = 3
 
     fetch('https://rolling-scopes-school.github.io/novogran-JSFEPRESCHOOL2024Q2/shelter/pets.json')
         .then(response => response.json())
         .then(json => {
 
-            
-            if(window.matchMedia("(max-width: 562px)").matches) {
+
+            if (window.matchMedia("(max-width: 667px)").matches) {
+                width = 270
+                cardsCount = 1
+                clearCards()
                 cardConstructor(1)
             } else {
-                if(window.matchMedia("(max-width: 904px)").matches) {
+                if (window.matchMedia("(max-width: 1158px)").matches) {
+                    width = 620
+                    cardsCount = 2
+                    clearCards()
                     cardConstructor(2)
                 } else {
+                    clearCards()
                     cardConstructor(3)
                 }
             }
 
-            window.matchMedia('(max-width: 904px)').addEventListener('change', (e) => {
-                if(!e.matches){
+            window.matchMedia('(max-width: 1158px)').addEventListener('change', (e) => {
+                if (!e.matches) {
+                    width = 1080
+                    cardsCount = 3
+                    clearCards()
                     cardConstructor(3)
                 } else {
+                    width = 620
+                    cardsCount = 2
+                    clearCards()
                     cardConstructor(2)
                 }
             })
 
-            window.matchMedia('(max-width: 562px)').addEventListener('change', (e) => {
-                if(e.matches){
+            window.matchMedia('(max-width: 667px)').addEventListener('change', (e) => {
+                if (e.matches) {
+                    width = 270
+                    cardsCount = 1
+                    clearCards()
                     cardConstructor(1)
                 } else {
+                    width = 620
+                    cardsCount = 2
+                    clearCards()
                     cardConstructor(2)
                 }
             })
-            
-            function cardConstructor(cardCount){
-                if(setJson.size == 0) setJson = new Set(json)
 
-                for(let i = 0; i<3; i++){
+            function clearCards() {
+                for (let item of document.getElementById('cards-slider-ul').querySelectorAll('li')) {
+                    item.remove()
+                }
+            }
+
+            function cardConstructor(cardCount) {
+                for (let i = 0; i <= cardsArray.length + 1; i++) cardsArray.pop()
+
+                for (let i = 0; i < 3; i++) {
                     let cardSet = new Set()
-                    while(cardSet.size < cardCount){
-                        cardSet.add(Array.from(setJson)[(Math.floor(Math.random() * Array.from(setJson).length))])
+                    while (cardSet.size < cardCount) {
+                        cardSet.add(json[(Math.floor(Math.random() * json.length))])
                     }
                     cardsArray.push(cardSet)
                 }
-                
-                for(let object of cardsArray){
-                    drawCard(object,'')
+
+                for (let object of cardsArray) {
+                    drawCard(object, '')
                 }
-                for(let card of document.getElementsByClassName('animalcard')){
+                for (let card of document.getElementsByClassName('animalcard')) {
                     card.addEventListener('click', () => togglePopup(card.getElementsByTagName('h4')[0]))
                 }
+                cardsList.style.transition = 'none'
+                cardsList.style.marginLeft = -width + 'px';
             }
 
-            let width = 1080
-            let cardsList = document.getElementById('cards-slider-ul')
-            let cardsCount = 3
-
-            if(window.matchMedia("(max-width: 581px)").matches) {
-                width = 270
-                cardsCount = 1
-            } else {
-                if(window.matchMedia("(max-width: 1279px)").matches) {
-                    width = 580
-                    cardsCount = 2
-                }
-            }
-
-            window.matchMedia('(max-width: 1279px)').addEventListener('change', (e) => {
-                if(!e.matches){
-                    width = 1080
-                    cardsCount = 3
-                } else {
-                    width = 580
-                    cardsCount = 2
-                }
-            })
-
-            window.matchMedia('(max-width: 581px)').addEventListener('change', (e) => {
-                if(e.matches){
-                    width = 270
-                    cardsCount = 1
-                } else {
-                    width = 580
-                    cardsCount = 2
-                }
-            })
-
-            arrrow_next.addEventListener('click', () => {
-
+            arrow_next.addEventListener('click', () => {
+                arrow_next.setAttribute('disabled', '')
                 let cardSet = new Set()
-                while(cardSet.size < cardsCount){
-                    let randomAnimal = Array.from(setJson)[(Math.floor(Math.random() * Array.from(setJson).length))]
-                    if(!cardsArray[cardsArray.length-1].has(randomAnimal))
-                    cardSet.add(randomAnimal)
+                while (cardSet.size < cardsCount) {
+                    let randomAnimal = json[(Math.floor(Math.random() * json.length))]
+                    if (!cardsArray[cardsArray.length - 1].has(randomAnimal))
+                        cardSet.add(randomAnimal)
                 }
                 cardsArray.push(cardSet)
-                    drawCard(cardsArray[cardsArray.length-1], '')
-                    for(let i=0; i<cardsCount; i++){
-                        document.getElementById('cards-slider-ul').querySelector('li').remove()
-                    }
+                drawCard(cardsArray[cardsArray.length - 1], '')
+                for (let i = 0; i < cardsCount; i++) {
+                    document.getElementById('cards-slider-ul').querySelector('li').remove()
+                }
 
-                    cardsArray.shift()
-                    cardsList.style.transition = 'none'
-                    cardsList.style.marginLeft = 0 + 'px';
+                cardsArray.shift()
+                cardsList.style.transition = 'none'
+                cardsList.style.marginLeft = 0 + 'px';
 
-                    setTimeout(() => {
-                        cardsList.style.transition = '1000ms'
-                        cardsList.style.marginLeft = -width + 'px'
-                      }, 100)
+                setTimeout(() => {
+                    cardsList.style.transition = '500ms'
+                    cardsList.style.marginLeft = -width + 'px'
+                }, 0)
+                setTimeout(() => {
+                    arrow_next.removeAttribute('disabled')
+                }, 500)
             })
 
             arrow_previous.addEventListener('click', () => {
-
+                arrow_previous.setAttribute('disabled', '')
                 let cardSet = new Set()
-                while(cardSet.size < cardsCount){
-                    let randomAnimal = Array.from(setJson)[(Math.floor(Math.random() * Array.from(setJson).length))]
-                    if(!cardsArray[0].has(randomAnimal))
-                    cardSet.add(randomAnimal)
+                while (cardSet.size < cardsCount) {
+                    let randomAnimal = json[(Math.floor(Math.random() * json.length))]
+                    if (!cardsArray[0].has(randomAnimal))
+                        cardSet.add(randomAnimal)
                 }
                 cardsArray.unshift(cardSet)
-                drawCard(cardsArray[0],'left')
+                drawCard(cardsArray[0], 'left')
 
-                    for(let i=0; i<cardsCount; i++){
-                        let a = document.getElementById('cards-slider-ul').querySelectorAll('li')
-                        a[a.length-1].remove()
-                    }
+                for (let i = 0; i < cardsCount; i++) {
+                    let a = document.getElementById('cards-slider-ul').querySelectorAll('li')
+                    a[a.length - 1].remove()
+                }
 
-                    cardsArray.pop()
-                    cardsList.style.transition = 'none'
-                    cardsList.style.marginLeft = -width*2 + 'px';
+                cardsArray.pop()
+                cardsList.style.transition = 'none'
+                cardsList.style.marginLeft = -width * 2 + 'px';
 
-                    setTimeout(() => {
-                        cardsList.style.transition = '1000ms'
-                        cardsList.style.marginLeft = -width + 'px'
-                      }, 100)
-                    
+                setTimeout(() => {
+                    cardsList.style.transition = '500ms'
+                    cardsList.style.marginLeft = -width + 'px'
+                }, 0)
+                setTimeout(() => {
+                    arrow_previous.removeAttribute('disabled')
+                }, 500)
             })
 
-            function drawCard(cardsArray,direction){
-                for(let item of cardsArray){
+            function drawCard(cardsArray, direction) {
+                for (let item of cardsArray) {
                     let cardLi = document.createElement('li')
-                    if(direction == 'left'){
+                    if (direction == 'left') {
                         document.getElementById('cards-slider-ul').prepend(cardLi)
                     } else {
                         document.getElementById('cards-slider-ul').append(cardLi)
@@ -179,19 +179,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-    
+
     burger_button.addEventListener("click", (e) => {
         e.preventDefault()
         toggleMenu()
     });
 
-    for(let item of links){
+    for (let item of links) {
         item.addEventListener('click', () => toggleMenu())
     }
 
     document.getElementById('burger-menu-item-about').addEventListener('click', () => toggleMenu())
     burger_overlay.addEventListener('click', () => toggleMenu())
-    function toggleMenu(){
+    function toggleMenu() {
         if (menu.classList.contains('burger-menu-active')) {
             menu.classList.remove('burger-menu-active')
             body.style.overflow = 'visible'
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('close-button').addEventListener('click', () => togglePopup())
     popup_overlay.addEventListener('click', () => togglePopup())
 
-    function togglePopup(text){
+    function togglePopup(text) {
         if (popup.classList.contains('popup-active')) {
             popup.classList.remove('popup-active')
             body.style.overflow = 'visible'
@@ -212,9 +212,9 @@ document.addEventListener("DOMContentLoaded", function() {
             body.style.overflow = 'hidden'
         }
 
-        if(text != undefined) {
-            for(let item of setJson){
-                if(item.name == text.innerText){
+        if (text != undefined) {
+            for (let item of json) {
+                if (item.name == text.innerText) {
                     document.getElementById('popup-img').setAttribute('src', item.img)
                     document.getElementById('popup-name').innerText = item.name
                     document.getElementById('popup-breed').innerText = item.type + ' - ' + item.breed

@@ -396,12 +396,24 @@ h5 {
     justify-content: space-between;
 }
 
+@media (max-width:1158px) {
+    .cards-slider {
+        width: 580px;
+    }
+}
+
+@media (max-width:667px) {
+    .cards-slider {
+        width: 270px;
+    }
+}
+
 .slider {
     max-width: 1280px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 56px 0px 60px 0px;
 }
 
@@ -483,12 +495,24 @@ h5 {
     transition: 400ms;
 }
 
+@media (max-width:1158px) {
+    .cards-slider-ul {
+        column-gap: 40px;
+    }
+}
+
+@media (max-width:667px) {
+    .cards-slider-ul {
+        column-gap: 0px;
+    }
+}
+
 .button-arrow-previous {
-    /* margin: 3px 51px 0px 40px; */
+    margin: 3px 6px 0px -6px;
 }
 
 .button-arrow-next {
-    /* margin: 3px 40px 0px 51px; */
+    margin: 3px -7px 0px 7px;
 }
 
 @media (max-width:1000px) {
