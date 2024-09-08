@@ -1074,7 +1074,7 @@ h5 {
 .animal-info {
     display: none;
     width: 952px;
-    /* height: 552px; */
+
     z-index: 20;
 }
 
@@ -1086,14 +1086,12 @@ h5 {
 @media (max-width:900px) {
     .animal-info{
         width: 682px;
-        /* height: 402px; */
     }
 }
 
 @media (max-width:500px) {
     .animal-info{
         width: 270px;
-        /* height: 393px; */
     }
 }
 
