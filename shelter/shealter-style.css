@@ -979,6 +979,7 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     right: -100%;
@@ -986,7 +987,7 @@ h5 {
     height: 100%;
     margin: 0;
     gap: 41.6px;
-    padding: 248px 0;
+    padding: 0;
     z-index: 20;
     list-style: none;
     background-color: #292929;
