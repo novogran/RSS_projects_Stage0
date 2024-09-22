@@ -13,7 +13,7 @@ body {
 
 .blur {
     backdrop-filter: blur(8px);
-    height: 91vh;
+    height: 92vh;
     width: 100%;
 }
 
@@ -148,10 +148,11 @@ body {
     height: 30px;
 }
 
-#play-button,
-#forward-button,
+#play-button:hover,
+#forward-button:hover,
 #backward-button:hover {
     cursor: pointer;
+    opacity: .75;
 }
 
 input[type="range"] {
@@ -201,6 +202,10 @@ input[type="range"]::-webkit-slider-thumb {
 .git-link {
     display: flex;
     flex-direction: row;
+}
+
+.git-link:hover {
+    opacity: .75;
 }
 
 .git-logo {

@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         () => {
             document.getElementById("song-time").innerText = getTimeCodeFromNum(audio.duration)
             progressBar.setAttribute('max', audio.duration)
+            document.getElementById('volume-percentage').style.height = (1 - audio.volume) * 100 + '%'
         },
         false
     );
@@ -134,3 +135,4 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('volume-percentage').style.height = newVolume * 100 + '%'
     }, false)
 })
+
