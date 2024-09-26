@@ -30,7 +30,7 @@ header {
     filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
 }
 
-.title-conteiner > h2 {
+.title-conteiner>h2 {
     color: white;
     font-size: 2rem;
     margin: 0;
@@ -68,22 +68,34 @@ header {
 
 #img-conteiner {
     height: 100%;
-    margin: auto;
+    max-width: 100vw;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+#img-conteiner > img {
+    width: 380px;
+    border-radius: 5px;
+}
 .footer-container {
     display: flex;
     flex-direction: row;
     padding: 10px;
+    border-top: 5px solid orange;
     justify-content: space-evenly;
     background: linear-gradient(45deg, rgb(40 40 40 / 80%), rgb(133 133 133 / 80%))
 }
 
-.footer-container > a {
+.footer-container>a {
     text-decoration: none;
 }
 
-.rslink > img {
+.rslink>img {
     width: 50px;
     height: 50px;
 }
@@ -101,7 +113,7 @@ header {
     filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(184deg) brightness(102%) contrast(101%);
 }
 
-.git-link > img {
+.git-link>img {
     width: 50px;
     height: 50px;
 }
