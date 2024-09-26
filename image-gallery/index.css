@@ -5,11 +5,14 @@ body {
     font-weight: 400;
     font-style: normal;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 header {
     display: flex;
     flex-direction: row;
+    padding-block: 15px;
     border-bottom: 5px solid orange;
 }
 
@@ -42,17 +45,30 @@ header {
 }
 
 #search {
-    height: 6vh;
+    height: 4vh;
+    width: 25vw;
     border-radius: 30px;
+    font-size: large;
+    padding-inline: 2vh;
 }
 
 .search-img {
     width: 20px;
     height: 20px;
     position: absolute;
-    right: 8%;
-    top: 34%;
+    right: 5%;
+    top: 30%;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.search-img:hover {
     filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+#img-conteiner {
+    height: 100%;
+    margin: auto;
 }
 
 .footer-container {
