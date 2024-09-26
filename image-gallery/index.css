@@ -1,0 +1,97 @@
+body {
+    background-color: black;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 5px solid orange;
+}
+
+.title-conteiner {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center
+}
+
+.gallary-img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+.title-conteiner > h2 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.search-conteiner {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    position: relative;
+}
+
+#search {
+    height: 6vh;
+    border-radius: 30px;
+}
+
+.search-img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 8%;
+    top: 34%;
+    filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-evenly;
+    background: linear-gradient(45deg, rgb(40 40 40 / 80%), rgb(133 133 133 / 80%))
+}
+
+.footer-container > a {
+    text-decoration: none;
+}
+
+.rslink > img {
+    width: 50px;
+    height: 50px;
+}
+
+.git-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.git-link:hover {
+    opacity: .75;
+}
+
+.git-logo {
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(184deg) brightness(102%) contrast(101%);
+}
+
+.git-link > img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-text {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
