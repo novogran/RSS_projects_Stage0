@@ -73,14 +73,20 @@ header {
     filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
 }
 
-.clear-brn{
+.clear-brn-conteiner {
     display: none;
-    position: absolute;
-    right: 3vh;
-    top: 47%;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
-    float: right;
-    transition: 0.4s;
+    position: absolute;
+    right: 1vh;
+    top: 29%;
+}
+
+.clear-brn{
+    position: relative;
+    top: 50%;
+    cursor: pointer;
 }
 
 .clear-brn:before,
@@ -98,6 +104,16 @@ header {
 
 .clear-brn:after {
     transform: rotate(-45deg);
+}
+
+.clear-brn-conteiner:hover .clear-brn:before {
+    background : orange;
+    transition: 0.4s;
+}
+
+.clear-brn-conteiner:hover .clear-brn::after {
+    background : orange;
+    transition: 0.4s;
 }
 
 #img-conteiner {

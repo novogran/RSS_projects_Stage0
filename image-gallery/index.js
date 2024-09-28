@@ -2,13 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let img_conteiner = document.getElementById("img-conteiner")
     let searchInput = document.getElementById("search")
     let search_img = document.getElementById("search-img")
-    let clear_brn = document.getElementById("clear-brn")
+    let clear_brn = document.getElementById("clear-brn-conteiner")
 
 
     async function getData(search) {
-        const res = await fetch(urlConstructor(search));
-        const data = await res.json();
-        drawImg(data)
+        try {
+            const res = await fetch(urlConstructor(search))
+            const data = await res.json()
+            drawImg(data)
+        } catch (res) {
+            if(res.status != 200)
+            console.log("Error: "+res.status)
+        }
+        
     }
 
     function urlConstructor(search) {
