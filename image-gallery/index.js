@@ -2,12 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let img_conteiner = document.getElementById("img-conteiner")
     let searchInput = document.getElementById("search")
     let search_img = document.getElementById("search-img")
+    let clear_brn = document.getElementById("clear-brn-conteiner")
 
 
     async function getData(search) {
-        const res = await fetch(urlConstructor(search));
-        const data = await res.json();
-        drawImg(data)
+        try {
+            const res = await fetch(urlConstructor(search))
+            const data = await res.json()
+            drawImg(data)
+        } catch (res) {
+            if(res.status != 200)
+            console.log("Error: "+res.status)
+        }
+        
     }
 
     function urlConstructor(search) {
@@ -34,10 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    searchInput.addEventListener('enter', (e) => {
-        console.log('work')
-        if (e.keyCode === 13) {
-            console.log('work')
+    searchInput.addEventListener('keyup', e => {
+        (searchInput.value != '')? clear_brn.style.display = 'block' : clear_brn.style.display = 'none'
+        if (e.key === 'Enter') {
             search_img.click()
         }
     })
@@ -47,5 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         getData(searchInput.value)
     })
 
+    clear_brn.addEventListener('click', () => {
+        searchInput.value = ''
+        clear_brn.style.display = 'none'
+        searchInput.focus()
+    })
+
     getData('lakes')
 })
+
