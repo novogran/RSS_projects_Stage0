@@ -49,7 +49,7 @@ header {
     width: 25vw;
     border-radius: 30px;
     font-size: large;
-    padding-inline: 2vh;
+    padding-inline: 4vh;
     border: none;
     outline: none;
 }
@@ -63,7 +63,7 @@ header {
     width: 20px;
     height: 20px;
     position: absolute;
-    right: 3%;
+    left: 1vh;
     top: 25%;
     transition: 0.4s;
     cursor: pointer;
@@ -71,6 +71,33 @@ header {
 
 .search-img:hover {
     filter: brightness(0) saturate(100%) invert(53%) sepia(100%) saturate(565%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+.clear-brn{
+    display: none;
+    position: absolute;
+    right: 3vh;
+    top: 47%;
+    cursor: pointer;
+    float: right;
+    transition: 0.4s;
+}
+
+.clear-brn:before,
+.clear-brn:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background: #555;
+}
+
+.clear-brn:before {
+    transform: rotate(45deg);
+}
+
+.clear-brn:after {
+    transform: rotate(-45deg);
 }
 
 #img-conteiner {
