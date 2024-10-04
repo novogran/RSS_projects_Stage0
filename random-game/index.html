@@ -4,23 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
     <title>Snake</title>
 </head>
 
 <body>
-    <footer></footer>
-    <div class="footer-container">
-        <a class="git-link" href="https://github.com/novogran">
-            <img class="git-logo" src="./assets/img/GitHub.png" alt="git-logo">
-            <p class="footer-text">Github</p>
-        </a>
-        <p class="footer-text">2024</p>
-        <a class="rslink" href="https://rs.school/courses/javascript-preschool-ru">
-            <img src="./assets/svg/rss-logo.svg" alt="rs-school-logo">
-        </a>
+    <header>
+        <p>Score: <span id="score">0</span></p>
+    </header>
+    <canvas id="snake" tabindex="1"></canvas>
+    <div id="main_menu">
+        <h2>Snake</h2>
+        <a id="new_game">new game</a>
+        <a id="setting_menu">settings</a>
+        <a id="leaderboard">leaderboard</a>
     </div>
+    <footer>
+        <div class="footer-container">
+            <a class="git-link" href="https://github.com/novogran">
+                <img class="git-logo" src="./assets/img/GitHub.png" alt="git-logo">
+                <p class="footer-text">Github</p>
+            </a>
+            <p class="footer-text">2024</p>
+            <a class="rslink" href="https://rs.school/courses/javascript-preschool-ru">
+                <img src="./assets/svg/rss-logo.svg" alt="rs-school-logo">
+            </a>
+        </div>
     </footer>
 </body>
 

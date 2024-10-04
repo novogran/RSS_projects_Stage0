@@ -1,11 +1,69 @@
-body {
+* {
     padding: 0;
     margin: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+header {
+    margin: 0 auto;
+    width: 340px;
+}
+
+header > p {
+    font-size: 4vh;
+    text-align: right;
+}
+
+#snake {
+    width: 320px;
+    height: 320px;
+    display: none;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 10px;
+    margin: 0 auto;
+}
+
+#snake:focus{
+    outline: none;
+}
+
+#main_menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    row-gap: 1vh;
+    font-size: 4vh;
+}
+
+#main_menu a:hover {
+    cursor: pointer;
+}
+
+#main_menu a:hover::before {
+    content: "<>";
+    margin-right: 5px;
+}
+
+#main_menu > h2 {
+    font-size: 10vh;
 }
 
 .footer-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 10px;
     justify-content: space-evenly;
     background: linear-gradient(45deg, rgb(40 40 40 / 80%), rgb(133 133 133 / 80%))
@@ -23,6 +81,7 @@ body {
 .git-link {
     display: flex;
     flex-direction: row;
+    align-items: center
 }
 
 .git-link:hover {
@@ -40,6 +99,6 @@ body {
 
 .footer-text {
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 25px;
 }
