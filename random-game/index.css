@@ -14,12 +14,13 @@ body {
     background-color: #000000;
     color: #FFFFFF;
 }
+
 header {
     margin: 0 auto;
     width: 340px;
 }
 
-header > p {
+header>p {
     font-size: 4vh;
     text-align: right;
 }
@@ -34,11 +35,53 @@ header > p {
     margin: 0 auto;
 }
 
-#snake:focus{
+#snake:focus {
     outline: none;
 }
 
 #main_menu {
+    display: none;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    row-gap: 1vh;
+    font-size: 4vh;
+}
+
+#main_menu a:hover,
+#game_over a:hover,
+#settings a:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000;
+}
+
+#main_menu a:hover::before,
+#game_over a:hover::before,
+#settings a:hover::before {
+    content: "<>";
+    margin-right: 5px;
+}
+
+h2 {
+    font-size: 10vh;
+}
+
+#game_over {
+    display: none;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    row-gap: 1vh;
+    font-size: 4vh;
+}
+
+#game_over span {
+    background-color: #ffffff;
+    color: #000;
+}
+
+#settings {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -47,17 +90,17 @@ header > p {
     font-size: 4vh;
 }
 
-#main_menu a:hover {
+#settings input {
+    display: none;
+}
+
+#settings label {
     cursor: pointer;
 }
 
-#main_menu a:hover::before {
-    content: "<>";
-    margin-right: 5px;
-}
-
-#main_menu > h2 {
-    font-size: 10vh;
+#settings input:checked+label {
+    background-color: #FFF;
+    color: #000;
 }
 
 .footer-container {
@@ -99,6 +142,5 @@ header > p {
 
 .footer-text {
     color: white;
-    /* font-family: 'Montserrat', sans-serif; */
     font-size: 25px;
 }
