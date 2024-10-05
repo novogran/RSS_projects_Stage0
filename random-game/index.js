@@ -78,17 +78,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function changeDir(key) {
         switch (key) {
-            case 'ArrowUp' && snake_dir != 2:
-                snake_next_dir = 0
+            case 'ArrowUp':
+                if (snake_dir != 2) snake_next_dir = 0
                 break
-            case 'ArrowDown' && snake_dir != 3:
-                snake_next_dir = 1
+            case 'ArrowRight':
+                if (snake_dir != 3) snake_next_dir = 1
                 break
-            case 'ArrowLeft' && snake_dir != 0:
-                snake_next_dir = 2
+            case 'ArrowDown':
+                if (snake_dir != 0) snake_next_dir = 2
                 break
-            case 'ArrowRight' && snake_dir != 1:
-                snake_next_dir = 3
+            case 'ArrowLeft':
+                if (snake_dir != 1) snake_next_dir = 3
                 break
         }
     }
@@ -124,6 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function setWall(hasWall) {
+        wall = hasWall
+        if (wall) {
+            snake_screen.style.borderColor = "#606060"
+        } else {
+            snake_screen.style.borderColor = "#FFFFFF"
+        }
+    }
+
     function newGame() {
         screenSwitch(0)
         snake_screen.focus()
@@ -136,7 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         score.innerHTML = 0
         createFood()
-        changeDir(window.key)
+        snake_screen.addEventListener('keyup', e => {
+            changeDir(e.key)
+        })
         mainLoop()
     }
 
@@ -147,14 +158,14 @@ document.addEventListener("DOMContentLoaded", function () {
         snake_dir = snake_next_dir
 
         switch (snake_dir) {
-            case 0: _y--;
-                break;
-            case 1: _x++;
-                break;
-            case 2: _y++;
-                break;
-            case 3: _x--;
-                break;
+            case 0: _y--
+                break
+            case 1: _x++
+                break
+            case 2: _y++
+                break
+            case 3: _x--
+                break
         }
         snake.pop()
         snake.unshift({ x: _x, y: _y })
@@ -194,14 +205,5 @@ document.addEventListener("DOMContentLoaded", function () {
         activeDot(food.x, food.y)
 
         setTimeout(mainLoop, 150)
-    }
-
-    function setWall(hasWall) {
-        wall = hasWall
-        if (wall) {
-            snake_screen.style.borderColor = "#606060"
-        } else {
-            snake_screen.style.borderColor = "#FFFFFF"
-        }
     }
 })
