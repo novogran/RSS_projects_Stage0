@@ -26,8 +26,6 @@ header>p {
 }
 
 #snake {
-    width: 320px;
-    height: 320px;
     display: none;
     border-style: solid;
     border-color: #FFFFFF;
