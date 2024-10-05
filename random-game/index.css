@@ -40,7 +40,7 @@ header>p {
 }
 
 #main_menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
@@ -50,7 +50,8 @@ header>p {
 
 #main_menu a:hover,
 #game_over a:hover,
-#settings a:hover {
+#settings a:hover,
+#leaderboard a:hover {
     cursor: pointer;
     background-color: #ffffff;
     color: #000;
@@ -58,7 +59,8 @@ header>p {
 
 #main_menu a:hover::before,
 #game_over a:hover::before,
-#settings a:hover::before {
+#settings a:hover::before,
+#leaderboard a:hover::before {
     content: "<>";
     margin-right: 5px;
 }
@@ -82,7 +84,7 @@ h2 {
 }
 
 #settings {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
@@ -101,6 +103,15 @@ h2 {
 #settings input:checked+label {
     background-color: #FFF;
     color: #000;
+}
+
+#leaderboard {
+    display: none;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    row-gap: 1vh;
+    font-size: 4vh;
 }
 
 .footer-container {
