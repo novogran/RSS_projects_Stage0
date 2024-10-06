@@ -16,12 +16,35 @@
     <header>
         <p>Score: <span id="score">0</span></p>
     </header>
-    <canvas id="snake" tabindex="1"></canvas>
+    <canvas id="snake" tabindex="1" width="320" height="320" ></canvas>
     <div id="main_menu">
         <h2>Snake</h2>
-        <a id="new_game">new game</a>
-        <a id="setting_menu">settings</a>
-        <a id="leaderboard">leaderboard</a>
+        <a id="new_game_button">new game</a>
+        <a id="settings_menu">settings</a>
+        <a id="leaderboard_button">leaderboard</a>
+    </div>
+    <div id="game_over">
+        <h2>Game Over</h2>
+        <p>press <span>space</span> for restart</p>
+        <a id="new_game_button">new game</a>
+        <a id="settings_menu">settings</a>
+        <a id="leaderboard_button">leaderboard</a>
+    </div>
+    <div id="settings">
+        <h2>Settings</h2>
+        <a id="new_game_button">new game</a>
+        <p>wall:
+            <input id="wallon" type="radio" name="wall" value="true" checked />
+            <label for="wallon">on</label>
+            <input id="walloff" type="radio" name="wall" value="false" />
+            <label for="walloff">off</label>
+        </p>
+        <a id="leaderboard_button">leaderboard</a>
+    </div>
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <a id="new_game_button">new game</a>
+        <a id="settings_menu">settings</a>
     </div>
     <footer>
         <div class="footer-container">
