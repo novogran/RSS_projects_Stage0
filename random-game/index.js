@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let snake
     let snake_next_dir
     let snake_dir
-    let wall = true
+    let wall = 1
 
     for (let new_game_button of document.querySelectorAll('#new_game_button')) {
         new_game_button.addEventListener('click', () => {
@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let wall_input of document.getElementById('settings').querySelectorAll('input'))
         wall_input.addEventListener('click', () => {
-            setWall(wall_input.value)
-            localStorage.clear()
+            if (wall_input.checked) setWall(wall_input.value)
         })
 
     function screenSwitch(option) {
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let item of leaderboard.querySelectorAll('p')) {
             item.remove()
         }
-        for (let i = 0;i < sortedStorage.length & i < 10; i++) {
+        for (let i = 0; i < sortedStorage.length & i < 10; i++) {
             let score_element = document.createElement('p')
             score_element.innerHTML = (i + 1) + '. ' + sortedStorage[i]
             leaderboard.querySelector('#new_game_button').before(score_element)
@@ -155,15 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillRect(x * 10, y * 10, 10, 10)
     }
 
-    function selfEatingCheck() {
-        for (let i = 1; i < snake.length; i++) {
-            if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
-                screenSwitch(3)
-                return
-            }
-        }
-    }
-
     function eatingFoodCheck() {
         if (food.x == snake[0].x && food.y == snake[0].y) {
             snake[snake.length] = { x: snake[0].x, y: snake[0].y }
@@ -175,11 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setWall(hasWall) {
         wall = hasWall
-        if (wall) {
-            snake_screen.style.borderColor = "#606060"
-        } else {
-            snake_screen.style.borderColor = "#FFFFFF"
-        }
+        console.log(wall)
+        if (wall == 0) snake_screen.style.borderColor = "#606060"
+        if (wall == 1) snake_screen.style.borderColor = "#FFFFFF"
     }
 
     function newGame() {
@@ -200,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mainLoop()
     }
 
-    function mainLoop() {
+    const mainLoop = function () {
 
         let _x = snake[0].x
         let _y = snake[0].y
@@ -218,14 +206,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         snake.pop()
         snake.unshift({ x: _x, y: _y })
-        if (wall) {
+        if (wall == 1) {
             if (snake[0].x < 0 || snake[0].x === snake_screen.width / 10
                 || snake[0].y < 0 || snake[0].y === snake_screen.height / 10) {
                 screenSwitch(3)
                 return
             }
         } else {
-            for (let i = 0, x = snake.length; i < x; i++) {
+            for (let i = 0; i < snake.length; i++) {
                 if (snake[i].x < 0) {
                     snake[i].x = snake[i].x + (snake_screen.width / 10)
                 }
@@ -241,7 +229,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        selfEatingCheck()
+        for (let i = 1; i < snake.length; i++) {
+            if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+                screenSwitch(3)
+                return
+            }
+        }
+
         eatingFoodCheck()
         ctx.beginPath()
         ctx.fillStyle = "#000000"
@@ -255,4 +249,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(mainLoop, 150)
     }
+
 })
