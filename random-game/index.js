@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let wall_input of document.getElementById('settings').querySelectorAll('input'))
         wall_input.addEventListener('click', () => {
             setWall(wall_input.value)
+            localStorage.clear()
         })
 
     function screenSwitch(option) {
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setting_screen.style.display = "none"
                 game_over_screen.style.display = "flex"
                 leaderboard.style.display = "none"
+                leaderboardCheck(score.innerText)
                 break
 
             case 4: snake_screen.style.display = "none"
@@ -72,8 +74,55 @@ document.addEventListener("DOMContentLoaded", function () {
                 setting_screen.style.display = "none"
                 game_over_screen.style.display = "none"
                 leaderboard.style.display = "flex"
+                loadLeaderboard()
                 break
         }
+    }
+
+    function loadLeaderboard() {
+        let sortedStorage = sortLocalStorage()
+        for (let item of leaderboard.querySelectorAll('p')) {
+            item.remove()
+        }
+        for (let i = 0;i < sortedStorage.length & i < 10; i++) {
+            let score_element = document.createElement('p')
+            score_element.innerHTML = (i + 1) + '. ' + sortedStorage[i]
+            leaderboard.querySelector('#new_game_button').before(score_element)
+        }
+    }
+
+    function leaderboardCheck(value) {
+        if (localStorage.length < 10) {
+            localStorage.setItem(value, value)
+        } else {
+            let sorted = new Array()
+            for (let key in localStorage) {
+                if (!localStorage.hasOwnProperty(key)) {
+                    continue;
+                }
+                sorted.push(localStorage.getItem(key))
+            }
+            sorted.push(value)
+            sorted.sort((a, b) => b - a)
+            localStorage.clear()
+            while (localStorage.length != 10) {
+                let item = sorted.shift()
+                localStorage.setItem(item, item)
+            }
+        }
+
+    }
+
+    function sortLocalStorage() {
+        let sorted = new Array()
+        for (let key in localStorage) {
+            if (!localStorage.hasOwnProperty(key)) {
+                continue;
+            }
+            sorted.push(localStorage.getItem(key))
+        }
+        sorted.sort((a, b) => b - a)
+        return sorted
     }
 
     function changeDir(key) {
@@ -118,8 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function eatingFoodCheck() {
         if (food.x == snake[0].x && food.y == snake[0].y) {
             snake[snake.length] = { x: snake[0].x, y: snake[0].y }
-            score.innerHTML = score.value++
-            addFood()
+            score.innerHTML = parseInt(score.innerText) + 1
+            createFood()
             activeDot(food.x, food.y)
         }
     }
@@ -169,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         snake.pop()
         snake.unshift({ x: _x, y: _y })
-        if (wall == true) {
+        if (wall) {
             if (snake[0].x < 0 || snake[0].x === snake_screen.width / 10
                 || snake[0].y < 0 || snake[0].y === snake_screen.height / 10) {
                 screenSwitch(3)

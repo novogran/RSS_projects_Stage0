@@ -107,9 +107,12 @@ h2 {
     display: none;
     flex-direction: column;
     margin: 0 auto;
-    align-items: center;
     row-gap: 1vh;
     font-size: 4vh;
+}
+
+#leaderboard a{
+    margin: 0 auto;
 }
 
 .footer-container {
