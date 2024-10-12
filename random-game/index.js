@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const setting_screen = document.getElementById('settings')
     const leaderboard = document.getElementById('leaderboard')
     const score = document.getElementById('score')
-    const ctx = snake_screen.getContext("2d");
-    const death_sound = createAudioInstance('./assets/audio/death-sound.mp3');
-    const eating_sound = createAudioInstance('./assets/audio/eating-sound.mp3');;
+    const ctx = snake_screen.getContext("2d")
+    const death_sound = createAudioInstance('./assets/audio/death-sound.mp3')
+    const eating_sound = createAudioInstance('./assets/audio/eating-sound.mp3')
+    const lol_u_died_sound = createAudioInstance('./assets/audio/lol-u-died-sound.mp3')
 
     let food = { x: 0, y: 0 }
     let snake
@@ -24,18 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     for (let new_game_button of document.querySelectorAll('#new_game_button')) {
         new_game_button.addEventListener('click', () => {
+            stopAudioInstance(lol_u_died_sound)
             newGame()
         })
     }
 
     for (let settings_menu of document.querySelectorAll('#settings_menu')) {
         settings_menu.addEventListener('click', () => {
+            stopAudioInstance(lol_u_died_sound)
             screenSwitch(2)
         })
     }
 
     for (let leaderboard_button of document.querySelectorAll('#leaderboard_button')) {
         leaderboard_button.addEventListener('click', () => {
+            stopAudioInstance(lol_u_died_sound)
             screenSwitch(4)
         })
     }
@@ -74,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setting_screen.style.display = "none"
                 game_over_screen.style.display = "flex"
                 leaderboard.style.display = "none"
+                playAudioInstance(lol_u_died_sound)
                 leaderboardCheck(score.innerText)
                 break
 
@@ -88,15 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createAudioInstance(src) {
-        let audioInstance = new Audio(src);
-        audioInstance.volume = 0.1;
-        audioInstance.preload = 'auto';
-        return audioInstance;
+        let audioInstance = new Audio(src)
+        audioInstance.volume = 0.1
+        audioInstance.preload = 'auto'
+        return audioInstance
     }
 
     function playAudioInstance(audioInstance) {
-        audioInstance.currentTime = 0;
-        audioInstance.play();
+        audioInstance.currentTime = 0
+        audioInstance.play()
+    }
+
+    function stopAudioInstance(audioInstance) {
+        audioInstance.pause()
+        audioInstance.currentTime = 0
     }
 
     function loadLeaderboard() {
@@ -233,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 || snake[0].y < 0 || snake[0].y === snake_screen.height / 10) {
                 playAudioInstance(death_sound)
                 screenSwitch(3)
+                playAudioInstance(lol_u_died_sound)
                 return
             }
         } else {
@@ -256,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
                 playAudioInstance(death_sound)
                 screenSwitch(3)
+                playAudioInstance(lol_u_died_sound)
                 return
             }
         }
