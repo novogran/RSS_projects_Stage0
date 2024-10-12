@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const leaderboard = document.getElementById('leaderboard')
     const score = document.getElementById('score')
     const ctx = snake_screen.getContext("2d");
+    const death_sound = createAudioInstance('./assets/audio/death-sound.mp3');
+    const eating_sound = createAudioInstance('./assets/audio/eating-sound.mp3');;
 
     let food = { x: 0, y: 0 }
     let snake
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let wall = 1
 
     document.onkeydown = ('keyup', e => {
-        if(game_over_screen.style.display === 'flex'){
+        if (game_over_screen.style.display === 'flex') {
             if (e.key === ' ') {
                 newGame()
             }
@@ -83,6 +85,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 loadLeaderboard()
                 break
         }
+    }
+
+    function createAudioInstance(src) {
+        let audioInstance = new Audio(src);
+        audioInstance.volume = 0.1;
+        audioInstance.preload = 'auto';
+        return audioInstance;
+    }
+
+    function playAudioInstance(audioInstance) {
+        audioInstance.currentTime = 0;
+        audioInstance.play();
     }
 
     function loadLeaderboard() {
@@ -163,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function eatingFoodCheck() {
         if (food.x == snake[0].x && food.y == snake[0].y) {
+            playAudioInstance(eating_sound)
             snake[snake.length] = { x: snake[0].x, y: snake[0].y }
             score.innerHTML = parseInt(score.innerText) + 1
             createFood()
@@ -216,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (wall == 1) {
             if (snake[0].x < 0 || snake[0].x === snake_screen.width / 10
                 || snake[0].y < 0 || snake[0].y === snake_screen.height / 10) {
+                playAudioInstance(death_sound)
                 screenSwitch(3)
                 return
             }
@@ -238,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 1; i < snake.length; i++) {
             if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+                playAudioInstance(death_sound)
                 screenSwitch(3)
                 return
             }
