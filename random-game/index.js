@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let snake_dir
     let wall = 1
 
+    document.onkeydown = ('keyup', e => {
+        if(game_over_screen.style.display === 'flex'){
+            if (e.key === ' ') {
+                newGame()
+            }
+        }
+    })
     for (let new_game_button of document.querySelectorAll('#new_game_button')) {
         new_game_button.addEventListener('click', () => {
             newGame()
