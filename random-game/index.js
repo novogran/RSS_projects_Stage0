@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.onkeydown = ('keyup', e => {
         if (game_over_screen.style.display === 'flex') {
             if (e.key === ' ') {
+                stopAudioInstance(lol_u_died_sound)
                 newGame()
             }
         }
