@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const death_sound = createAudioInstance('./assets/audio/death-sound.mp3')
     const eating_sound = createAudioInstance('./assets/audio/eating-sound.mp3')
     const lol_u_died_sound = createAudioInstance('./assets/audio/lol-u-died-sound.mp3')
+    lol_u_died_sound.loop = true
 
     let food = { x: 0, y: 0 }
     let snake
@@ -78,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 setting_screen.style.display = "none"
                 game_over_screen.style.display = "flex"
                 leaderboard.style.display = "none"
-                playAudioInstance(lol_u_died_sound)
                 leaderboardCheck(score.innerText)
                 break
 
