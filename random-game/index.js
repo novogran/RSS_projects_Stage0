@@ -112,36 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadLeaderboard() {
         let sortedStorage = sortLocalStorage()
+        console.log(localStorage)
         for (let item of leaderboard.querySelectorAll('p')) {
             item.remove()
         }
         for (let i = 0; i < sortedStorage.length & i < 10; i++) {
             let score_element = document.createElement('p')
-            score_element.innerHTML = (i + 1) + '. ' + sortedStorage[i]
+            score_element.innerHTML = (i + 1) + '. ' + ((typeof sortedStorage[i] === 'string') ? sortedStorage[i] : 0)
             leaderboard.querySelector('#new_game_button').before(score_element)
         }
     }
 
     function leaderboardCheck(value) {
-        if (localStorage.length < 10) {
-            localStorage.setItem(value, value)
-        } else {
-            let sorted = new Array()
-            for (let key in localStorage) {
-                if (!localStorage.hasOwnProperty(key)) {
-                    continue;
-                }
-                sorted.push(localStorage.getItem(key))
-            }
-            sorted.push(value)
-            sorted.sort((a, b) => b - a)
-            localStorage.clear()
-            while (localStorage.length != 10) {
-                let item = sorted.shift()
-                localStorage.setItem(item, item)
-            }
-        }
-
+        localStorage.setItem('novogran-JSFEPRESCHOOL2024Q2_' + value, value)
     }
 
     function sortLocalStorage() {
@@ -150,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!localStorage.hasOwnProperty(key)) {
                 continue;
             }
-            sorted.push(localStorage.getItem(key))
+            if (key.startsWith('novogran-JSFEPRESCHOOL2024Q2')) sorted.push(localStorage.getItem(key))
         }
         sorted.sort((a, b) => b - a)
         return sorted
