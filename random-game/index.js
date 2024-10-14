@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadLeaderboard() {
         let sortedStorage = sortLocalStorage()
-        console.log(localStorage)
         for (let item of leaderboard.querySelectorAll('p')) {
             item.remove()
         }
