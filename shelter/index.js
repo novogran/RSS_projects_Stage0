@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let cardsList = document.getElementById('cards-slider-ul')
     let cardsCount = 3
 
-    fetch('https://rolling-scopes-school.github.io/novogran-JSFEPRESCHOOL2024Q2/shelter/pets.json')
+    fetch('https://novogran.github.io/RSS_projects_Stage0/shelter/pets.json')
         .then(response => response.json())
         .then(json => {
 
